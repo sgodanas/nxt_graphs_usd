@@ -1,5 +1,7 @@
 # nxt_graphs_usd
 
+![Alt text](images/stageopen.PNG?raw=true "StageOpen")
+
 ## Overview
 
 A library of USD graphs/nodes for use inside NXT with some simple USD examples. 

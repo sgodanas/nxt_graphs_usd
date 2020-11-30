@@ -24,7 +24,7 @@ These graphs have been tested on Centos 7
 Dependencies
 ------------
 
-The following dependencies are optional:
+The following dependencies are not optional:
  - [Python2.7](https://python.org)
  - Please see NXT and USDs documentation for their dependencies.
 
@@ -34,3 +34,22 @@ The following dependencies are required:
 
  - [PySide](http://wiki.qt.io/PySide) or [PySide2](http://wiki.qt.io/PySide2)
  - [PyOpenGL](https://pypi.python.org/pypi/PyOpenGL/)
+
+### Setup up NXT env with USD
+
+Making a nxt.sh:
+```
+#!/usr/bin/bash
+
+# PATH TO USD
+export PYTHONPATH="$PYTHONPATH:PATH/TO/USD/lib/python"
+export PATH="$PATH:PATH/TO/USD/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:PATH/TO/USD/lib"
+# NXT ROOTS
+export NXT_FILE_ROOTS="/path/too/work/space"
+# Run NXT
+nxt ui
+```
+
+This can now be run in terminal: ``` ./nxt.sh ```
+

@@ -14,12 +14,20 @@
                 -61.4842005856586
             ], 
             "/CreateNew_hello_world": [
-                117.85910955502561, 
-                -500.1135368433197
+                -201.0816781402915, 
+                -359.4854661880358
             ], 
             "/DefinePrim_hello": [
                 398.9067494809716, 
                 -146.0564082745289
+            ], 
+            "/Mesh": [
+                854.046633654155, 
+                -36.757887146483476
+            ], 
+            "/Points": [
+                863.6620697625153, 
+                81.83249152329343
             ], 
             "/RootLayerSave_hello_world": [
                 581.0846350707062, 
@@ -31,10 +39,18 @@
             ]
         }, 
         "collapse": {
+            "/AddVariant": true, 
+            "/AddVariantSet": true, 
             "/CreateNew_hello_world": false, 
             "/CreateNew_hello_world/DefinePrim_hello": false, 
             "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": false, 
-            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": true
+            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": true, 
+            "/GetVariantEditContext": true, 
+            "/Mesh": false, 
+            "/Points": true, 
+            "/SetAssetName": true, 
+            "/SetKind": true, 
+            "/SetVariantSelection": true
         }
     }, 
     "nodes": {

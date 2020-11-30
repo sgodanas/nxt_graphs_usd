@@ -31,8 +31,8 @@
                 423.4172771320612
             ], 
             "/Mesh": [
-                938.9021047563213, 
-                524.179802007739
+                953.4964379908755, 
+                100.94413820566666
             ], 
             "/NurbsCurves": [
                 980.2527155875582, 
@@ -43,8 +43,8 @@
                 229.8607484442289
             ], 
             "/Points": [
-                953.4964379908755, 
-                100.94413820566666
+                938.9021047563213, 
+                524.179802007739
             ], 
             "/Sphere": [
                 585.1813685027879, 
@@ -60,8 +60,8 @@
                 "DefinePrim", 
                 "Cylinder", 
                 "Capsule", 
-                "Mesh", 
                 "Points", 
+                "Mesh", 
                 "BasisCurves", 
                 "NurbsPatch", 
                 "NurbsCurves", 
@@ -156,7 +156,7 @@
             }, 
             "code": [
                 "prim = Usd.Prim('${prim_name}')", 
-                "points = UsdGeom.Points.Define(stage, prim.GetName())"
+                "mesh = UsdGeom.Mesh.Define(stage, prim.GetName())"
             ]
         }, 
         "/NurbsCurves": {
@@ -192,7 +192,7 @@
             }, 
             "code": [
                 "prim = Usd.Prim('${prim_name}')", 
-                "mesh = UsdGeom.Mesh.Define(stage, prim.GetName())"
+                "points = UsdGeom.Points.Define(stage, prim.GetName())"
             ]
         }, 
         "/Sphere": {

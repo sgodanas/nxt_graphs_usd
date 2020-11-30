@@ -1,0 +1,211 @@
+{
+    "version": "1.17", 
+    "alias": "pxr_usd_geom", 
+    "color": "#0052aa", 
+    "mute": false, 
+    "solo": false, 
+    "meta_data": {
+        "positions": {
+            "/BasisCurves": [
+                964.4421879167911, 
+                312.5619701067028
+            ], 
+            "/Capsule": [
+                670.7361671738514, 
+                560.3618611832176
+            ], 
+            "/Cone": [
+                638.1604911107886, 
+                236.16963056855957
+            ], 
+            "/Cube": [
+                524.2630806238237, 
+                144.04672502763208
+            ], 
+            "/Cylinder": [
+                858.5013691188718, 
+                459.31896922664276
+            ], 
+            "/DefinePrim": [
+                592.7841879848856, 
+                423.4172771320612
+            ], 
+            "/Mesh": [
+                938.9021047563213, 
+                524.179802007739
+            ], 
+            "/NurbsCurves": [
+                980.2527155875582, 
+                446.34335809011645
+            ], 
+            "/NurbsPatch": [
+                992.4146599496868, 
+                229.8607484442289
+            ], 
+            "/Points": [
+                953.4964379908755, 
+                100.94413820566666
+            ], 
+            "/Sphere": [
+                585.1813685027879, 
+                7.224461339540592
+            ]
+        }
+    }, 
+    "nodes": {
+        "/": {
+            "child_order": [
+                "Cube", 
+                "Cone", 
+                "DefinePrim", 
+                "Cylinder", 
+                "Capsule", 
+                "Mesh", 
+                "Points", 
+                "BasisCurves", 
+                "NurbsPatch", 
+                "NurbsCurves", 
+                "Sphere"
+            ], 
+            "code": [
+                "from pxr import Usd, UsdGeom", 
+                ""
+            ]
+        }, 
+        "/BasisCurves": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "basis_curves = UsdGeom.BasisCurves.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Capsule": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "capsule = UsdGeom.Capsule.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Cone": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "cone = UsdGeom.Cone.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Cube": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "cube = UsdGeom.Cube.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Cylinder": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "cylinder = UsdGeom.Cylinder.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/DefinePrim": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "/hello"
+                }, 
+                "type": {
+                    "type": "raw", 
+                    "value": "Xform"
+                }
+            }, 
+            "code": [
+                "xform = stage.DefinePrim('${prim_name}', '${type}')"
+            ]
+        }, 
+        "/Mesh": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "points = UsdGeom.Points.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/NurbsCurves": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "nurbs_curves = UsdGeom.NurbsCurves.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/NurbsPatch": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "nurbs_patch = UsdGeom.NurbsPatch.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Points": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "mesh = UsdGeom.Mesh.Define(stage, prim.GetName())"
+            ]
+        }, 
+        "/Sphere": {
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "hello/world"
+                }
+            }, 
+            "code": [
+                "prim = Usd.Prim('${prim_name}')", 
+                "sphere = UsdGeom.Sphere.Define(stage, prim.GetName())"
+            ]
+        }
+    }
+}

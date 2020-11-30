@@ -1,0 +1,113 @@
+{
+    "version": "1.17", 
+    "alias": "HelloWorldRedux", 
+    "color": "#b49a14", 
+    "mute": false, 
+    "solo": false, 
+    "references": [
+        "../pxr_usd_tools.nxt"
+    ], 
+    "meta_data": {
+        "positions": {
+            "/CreateNew_HelloWorldRedux": [
+                36.590627170207654, 
+                -335.1668461414724
+            ], 
+            "/DefinePrim_Hello": [
+                283.7797438414739, 
+                -166.38867589429137
+            ], 
+            "/RootLayerSave_pasted": [
+                166.18847597270178, 
+                -136.25390576643875
+            ]
+        }, 
+        "collapse": {
+            "/CreateNew_HelloWorldRedux": false, 
+            "/CreateNew_HelloWorldRedux/DefinePrim_Hello/DefinePrim_World": false
+        }
+    }, 
+    "nodes": {
+        "/": {
+            "child_order": [
+                "UsdView"
+            ], 
+            "attrs": {
+                "USD_file": {
+                    "value": "'./HelloWorldRedux.usda'"
+                }
+            }
+        }, 
+        "/CreateNew_HelloWorldRedux": {
+            "start_point": true, 
+            "child_order": [
+                "DefinePrim_Hello"
+            ], 
+            "attrs": {
+                "directory": {
+                    "comment": "Path to usd file you want to create", 
+                    "type": "raw", 
+                    "value": "./${name}.${type}"
+                }, 
+                "name": {
+                    "comment": "name of usd file", 
+                    "type": "raw", 
+                    "value": "HelloWorldRedux"
+                }, 
+                "stage": {}, 
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
+                    "type": "raw", 
+                    "value": "usda"
+                }
+            }, 
+            "code": [
+                "self.stage = Usd.Stage.CreateNew('${directory}')"
+            ]
+        }, 
+        "/CreateNew_HelloWorldRedux/DefinePrim_Hello": {
+            "child_order": [
+                "DefinePrim_World"
+            ], 
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "/hello"
+                }, 
+                "type": {
+                    "type": "raw", 
+                    "value": "Xform"
+                }
+            }, 
+            "code": [
+                "xform = self.stage.DefinePrim('${prim_name}', '${type}')"
+            ]
+        }, 
+        "/CreateNew_HelloWorldRedux/DefinePrim_Hello/DefinePrim_World": {
+            "child_order": [
+                "RootLayerSave_pasted"
+            ], 
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "/hello/World"
+                }, 
+                "type": {
+                    "type": "raw", 
+                    "value": "Sphere"
+                }
+            }, 
+            "code": [
+                "xform = self.stage.DefinePrim('${prim_name}', '${type}')"
+            ]
+        }, 
+        "/CreateNew_HelloWorldRedux/DefinePrim_Hello/DefinePrim_World/RootLayerSave_pasted": {
+            "code": [
+                "self.stage.GetRootLayer().Save()"
+            ]
+        }, 
+        "/UsdView": {
+            "start_point": true
+        }
+    }
+}

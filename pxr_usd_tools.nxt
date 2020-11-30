@@ -1,0 +1,283 @@
+{
+    "version": "1.17", 
+    "alias": "pxr_usd_tools", 
+    "color": "#c91781", 
+    "mute": false, 
+    "solo": false, 
+    "references": [
+        "/home/sue.sauer/Documents/nxt_graphs_usd/pxr_usd_model_api.nxt", 
+        "./pxr_usd_variants.nxt", 
+        "./pxr_usd_geom.nxt", 
+        "./pxr_usd.nxt"
+    ], 
+    "meta_data": {
+        "aliases": {
+            "./pxr_usd.nxt": "pxr_usd_core"
+        }, 
+        "colors": {
+            "./pxr_usd_variants.nxt": "#2d9c1c"
+        }, 
+        "positions": {
+            "/AddVariant": [
+                1319.1617546917594, 
+                80.84750284117011
+            ], 
+            "/AddVariantSet": [
+                1323.0917580422436, 
+                -44.78358214273767
+            ], 
+            "/BasisCurves": [
+                875.6599940732531, 
+                290.6704702548714
+            ], 
+            "/Capsule": [
+                514.2714916486673, 
+                493.65211580426296
+            ], 
+            "/Cone": [
+                517.5632329481199, 
+                187.59573491970684
+            ], 
+            "/CreateNew": [
+                19.75236483993075, 
+                -56.772703544544754
+            ], 
+            "/Cube": [
+                512.5383471913423, 
+                80.3981721084458
+            ], 
+            "/Cylinder": [
+                517.3818637564217, 
+                405.4034243061339
+            ], 
+            "/DefinePrim": [
+                510.5553254693838, 
+                292.0965563983494
+            ], 
+            "/GetAttribute": [
+                17.402739261617967, 
+                411.4504782568242
+            ], 
+            "/GetDefaultPrim": [
+                17.885556445532103, 
+                700.5176274500079
+            ], 
+            "/GetPrimAtPath": [
+                18.645792066019226, 
+                248.61056088025623
+            ], 
+            "/GetPropertyNames": [
+                16.15968645721665, 
+                334.3812043839447
+            ], 
+            "/GetVariantEditContext": [
+                1321.8566714531316, 
+                319.3476362226221
+            ], 
+            "/Mesh": [
+                885.8028361972629, 
+                -47.56934522373683
+            ], 
+            "/NurbsCurves": [
+                877.2882874506622, 
+                411.0737194399438
+            ], 
+            "/NurbsPatch": [
+                885.3895495629561, 
+                188.51013761299194
+            ], 
+            "/Points": [
+                889.0381328715945, 
+                74.18786060898391
+            ], 
+            "/RootLayerSave": [
+                16.44428156008675, 
+                152.715193683245
+            ], 
+            "/SetAssetName": [
+                1691.110666045474, 
+                72.44660136057723
+            ], 
+            "/SetAssetVersion": [
+                1697.3203747335242, 
+                173.87184326538542
+            ], 
+            "/SetAttribute": [
+                16.15968645721665, 
+                502.1933329781177
+            ], 
+            "/SetDefaultPrim": [
+                18.87919847028388, 
+                609.1025611728438
+            ], 
+            "/SetKind": [
+                1692.5260185438156, 
+                -45.02285960658424
+            ], 
+            "/SetVariantSelection": [
+                1324.551588214504, 
+                208.85604900635622
+            ], 
+            "/Sphere": [
+                512.9367551073819, 
+                -43.34676803724355
+            ], 
+            "/StageOpen": [
+                21.316267707473827, 
+                43.469164609315044
+            ], 
+            "/UsdCat": [
+                -513.4459187659925, 
+                36.41388484663948
+            ], 
+            "/UsdConvert": [
+                -511.29260807534945, 
+                342.2483757561213
+            ], 
+            "/UsdDiff": [
+                -515.3829489399525, 
+                242.6935579664327
+            ], 
+            "/UsdEdit": [
+                -515.4003663995843, 
+                134.87534582509653
+            ], 
+            "/UsdView": [
+                -514.9785931503686, 
+                -68.97034729692433
+            ]
+        }, 
+        "collapse": {
+            "/Cone": true, 
+            "/CreateNew": true, 
+            "/Cube": true, 
+            "/Cylinder": false, 
+            "/DefinePrim": false, 
+            "/Mesh": true, 
+            "/RootLayerSave": false, 
+            "/SetAssetName": true, 
+            "/SetAssetName_pasted": true, 
+            "/SetKind": true, 
+            "/Sphere": true, 
+            "/StageOpen": true, 
+            "/UsdCat": true, 
+            "/UsdConvert": true, 
+            "/UsdDiff": true, 
+            "/UsdEdit": false, 
+            "/UsdView": true, 
+            "/capsule": false, 
+            "/node": true
+        }
+    }, 
+    "nodes": {
+        "/": {
+            "child_order": [
+                "UsdCat", 
+                "UsdEdit", 
+                "UsdView", 
+                "UsdDiff", 
+                "UsdConvert"
+            ], 
+            "attrs": {
+                "USD_file": {
+                    "comment": "USD file you want to inspect", 
+                    "type": "str", 
+                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.usda'"
+                }
+            }
+        }, 
+        "/UsdCat": {
+            "start_point": true, 
+            "code": [
+                "import os", 
+                "", 
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #", 
+                "", 
+                "# usage: usdcat [-h] [-o file] [--usdFormat usda|usdb|usdc] [-f]", 
+                "#               [--mask PRIMPATH[,PRIMPATH...]]", 
+                "#               inputFiles [inputFiles ...]", 
+                "", 
+                "", 
+                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")"
+            ]
+        }, 
+        "/UsdConvert": {
+            "attrs": {
+                "converted_file": {
+                    "type": "str", 
+                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.abc'"
+                }
+            }, 
+            "code": [
+                "import os", 
+                "", 
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #", 
+                "# https://graphics.pixar.com/usd/docs/Alembic-USD-Plugin.html", 
+                "# usage: usdcat [-h] [-o file] [--usdFormat usda|usdb|usdc] [-f]", 
+                "#               [--mask PRIMPATH[,PRIMPATH...]]", 
+                "#               inputFiles [inputFiles ...]", 
+                "", 
+                "", 
+                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  -o ${USD_file} -out ${converted_file};read -p $msg'\\\"\")"
+            ]
+        }, 
+        "/UsdDiff": {
+            "start_point": true, 
+            "attrs": {
+                "diff_file": {
+                    "type": "str", 
+                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.usda'"
+                }
+            }, 
+            "code": [
+                "import os", 
+                "", 
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usddiff #", 
+                "# ", 
+                "# usage: usddiff [-h] [-n] [-f] files [files ...]", 
+                "", 
+                "", 
+                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usddiff  ${USD_file} ${diff_file};read -p $msg'\\\"\")"
+            ]
+        }, 
+        "/UsdEdit": {
+            "start_point": true, 
+            "code": [
+                "import os", 
+                "", 
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdedit #", 
+                "# ", 
+                "# usage: usdedit [-h] [-n] [-f] usdFileName", 
+                "", 
+                "", 
+                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdedit  ${USD_file};read -p $msg'\\\"\")"
+            ]
+        }, 
+        "/UsdView": {
+            "start_point": true, 
+            "code": [
+                "import subprocess", 
+                "", 
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
+                "# USDVIEW Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdview #", 
+                "", 
+                "# usage: usdview", 
+                "#        [-h] [--renderer {GL,Embree,Prman,HydraDisabled}]", 
+                "#        [--select PRIMPATH] [--camera CAMERA] [--mask PRIMPATH[,PRIMPATH...]]", 
+                "#        [--clearsettings] [--defaultsettings] [--norender] [--noplugins]", 
+                "#        [--unloaded] [--timing] [--memstats {none,stage,stageAndImaging}]", 
+                "#        [--numThreads NUMTHREADS] [--ff FIRSTFRAME] [--lf LASTFRAME]", 
+                "#        [--cf CURRENTFRAME] [--complexity {low,medium,high,veryhigh}]", 
+                "#        [--quitAfterStartup] [--sessionLayer SESSIONLAYER]", 
+                "#        usdFile", 
+                "", 
+                "subprocess.Popen([\"usdview\", ${USD_file}], stdout=subprocess.PIPE)", 
+                ""
+            ]
+        }
+    }
+}

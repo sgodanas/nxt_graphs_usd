@@ -1,0 +1,124 @@
+{
+    "version": "1.17", 
+    "alias": "HelloWorld", 
+    "color": "#e83723", 
+    "mute": false, 
+    "solo": false, 
+    "references": [
+        "../pxr_usd_tools.nxt"
+    ], 
+    "meta_data": {
+        "positions": {
+            "/CreateNew": [
+                27.604859908453804, 
+                -61.4842005856586
+            ], 
+            "/CreateNew_hello_world": [
+                117.85910955502561, 
+                -500.1135368433197
+            ], 
+            "/DefinePrim_hello": [
+                398.9067494809716, 
+                -146.0564082745289
+            ], 
+            "/RootLayerSave_hello_world": [
+                581.0846350707062, 
+                -122.49892306895973
+            ], 
+            "/Sphere_world": [
+                574.802639015888, 
+                -136.63341419230125
+            ]
+        }, 
+        "collapse": {
+            "/CreateNew_hello_world": false, 
+            "/CreateNew_hello_world/DefinePrim_hello": false, 
+            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": false, 
+            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": true
+        }
+    }, 
+    "nodes": {
+        "/": {
+            "child_order": [
+                "UsdView", 
+                "CreateNew_hello_world"
+            ], 
+            "attrs": {
+                "USD_file": {
+                    "value": "'./HelloWorld3.usda'"
+                }
+            }
+        }, 
+        "/CreateNew_hello_world": {
+            "start_point": true, 
+            "child_order": [
+                "DefinePrim_hello"
+            ], 
+            "attrs": {
+                "directory": {
+                    "comment": "Path to usd file you want to create", 
+                    "type": "raw", 
+                    "value": "./${name}.${type}"
+                }, 
+                "name": {
+                    "comment": "name of usd file", 
+                    "type": "raw", 
+                    "value": "HelloWorld3"
+                }, 
+                "stage": {}, 
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
+                    "type": "raw", 
+                    "value": "usda"
+                }
+            }, 
+            "code": [
+                "self.stage = None", 
+                "self.stage = Usd.Stage.CreateNew('${directory}')", 
+                ""
+            ]
+        }, 
+        "/CreateNew_hello_world/DefinePrim_hello": {
+            "child_order": [
+                "Sphere_world"
+            ], 
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "/hello"
+                }, 
+                "type": {
+                    "type": "raw", 
+                    "value": "Xform"
+                }
+            }, 
+            "code": [
+                "xform = self.stage.DefinePrim('${prim_name}', '${type}')"
+            ]
+        }, 
+        "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": {
+            "child_order": [
+                "RootLayerSave_hello_world"
+            ], 
+            "attrs": {
+                "prim_name": {
+                    "type": "raw", 
+                    "value": "/hello/world"
+                }
+            }, 
+            "code": [
+                "", 
+                "sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
+            ]
+        }, 
+        "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": {
+            "code": [
+                "self.stage.GetRootLayer().Save()", 
+                "self.stage = None"
+            ]
+        }, 
+        "/UsdView": {
+            "start_point": true
+        }
+    }
+}

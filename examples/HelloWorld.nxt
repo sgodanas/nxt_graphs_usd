@@ -9,48 +9,136 @@
     ], 
     "meta_data": {
         "positions": {
+            "/BasisCurves": [
+                505.42325971229366, 
+                -46.634155658886755
+            ], 
+            "/Capsule": [
+                516.2673770091037, 
+                76.51207547304725
+            ], 
+            "/Cone": [
+                516.5652902679016, 
+                187.5957349197068
+            ], 
             "/CreateNew": [
-                27.604859908453804, 
-                -61.4842005856586
+                15.096740205601549, 
+                -57.91045209912938
             ], 
             "/CreateNew_hello_world": [
                 -201.0816781402915, 
                 -359.4854661880358
             ], 
+            "/Cube": [
+                516.5301179122151, 
+                298.94761907623587
+            ], 
+            "/Cylinder": [
+                519.377749116858, 
+                399.41576822482455
+            ], 
+            "/DefinePrim": [
+                517.5409242309113, 
+                493.68097780242965
+            ], 
             "/DefinePrim_hello": [
                 398.9067494809716, 
                 -146.0564082745289
             ], 
+            "/GetDefaultPrim": [
+                24.122802284072208, 
+                706.7087632111525
+            ], 
             "/Mesh": [
-                854.046633654155, 
-                -36.757887146483476
+                893.9643408628838, 
+                77.00757839839353
+            ], 
+            "/ModelApi": [
+                1686.497118713328, 
+                -32.06719873609849
+            ], 
+            "/NurbsCurves": [
+                887.2677142528441, 
+                188.53250175128085
+            ], 
+            "/NurbsPatch": [
+                887.3854349233926, 
+                295.2900043963415
             ], 
             "/Points": [
-                863.6620697625153, 
-                81.83249152329343
+                891.6044648086256, 
+                -40.91445814354758
             ], 
             "/RootLayerSave_hello_world": [
                 581.0846350707062, 
                 -122.49892306895973
             ], 
+            "/SetAssetIdentifier": [
+                1681.7464226042766, 
+                419.24893162380624
+            ], 
+            "/SetAssetName": [
+                1683.9846218818966, 
+                214.9674846321261
+            ], 
+            "/SetAssetVersion": [
+                1683.0682864063695, 
+                316.39272653693433
+            ], 
+            "/SetKind": [
+                1678.2739302166608, 
+                97.4980236649646
+            ], 
+            "/SetPayloadAssetDependencies": [
+                1678.1834005224878, 
+                515.4505278321017
+            ], 
+            "/Sphere": [
+                884.956908311559, 
+                398.9543058166465
+            ], 
             "/Sphere_world": [
                 574.802639015888, 
                 -136.63341419230125
+            ], 
+            "/StageOpen": [
+                8.934371216323086, 
+                48.24560456814442
+            ], 
+            "/Xform": [
+                879.1387210565812, 
+                493.62581305959935
             ]
         }, 
         "collapse": {
             "/AddVariant": true, 
             "/AddVariantSet": true, 
+            "/BasisCurves": true, 
+            "/Capsule": false, 
+            "/Cone": false, 
+            "/CreateNew": true, 
             "/CreateNew_hello_world": false, 
             "/CreateNew_hello_world/DefinePrim_hello": false, 
             "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": false, 
             "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": true, 
+            "/CreateNew_pasted": true, 
+            "/Cube": true, 
+            "/Cylinder": false, 
+            "/DefinePrim": false, 
             "/GetVariantEditContext": true, 
             "/Mesh": false, 
+            "/ModelApi": true, 
+            "/NurbsCurves": true, 
+            "/NurbsPatch": false, 
             "/Points": true, 
-            "/SetAssetName": true, 
-            "/SetKind": true, 
-            "/SetVariantSelection": true
+            "/SetAssetIdentifier": false, 
+            "/SetAssetName": false, 
+            "/SetAssetVersion": true, 
+            "/SetKind": false, 
+            "/SetVariantSelection": true, 
+            "/Sphere": true, 
+            "/StageOpen": true, 
+            "/Xform": false
         }
     }, 
     "nodes": {
@@ -117,14 +205,13 @@
                 "RootLayerSave_hello_world"
             ], 
             "attrs": {
-                "prim_name": {
+                "sphere_name": {
                     "type": "raw", 
-                    "value": "/hello/world"
+                    "value": "/world"
                 }
             }, 
             "code": [
-                "", 
-                "sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
+                "sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}${sphere_name}')"
             ]
         }, 
         "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": {

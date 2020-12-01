@@ -15,8 +15,8 @@
                 588
             ], 
             "/GetDefaultPrim": [
-                0, 
-                738
+                139.3761909746394, 
+                776.3968586984721
             ], 
             "/GetPrimAtPath": [
                 0, 
@@ -39,8 +39,8 @@
                 672
             ], 
             "/StageOpen": [
-                0, 
-                170
+                419.91544716718283, 
+                63.43403563589358
             ]
         }
     }, 
@@ -48,13 +48,13 @@
         "/": {
             "child_order": [
                 "RootLayerSave", 
-                "StageOpen", 
                 "CreateNew", 
                 "GetPrimAtPath", 
                 "GetPropertyNames", 
                 "GetAttribute", 
                 "SetAttribute", 
                 "SetDefaultPrim", 
+                "StageOpen", 
                 "GetDefaultPrim"
             ], 
             "code": [
@@ -65,16 +65,23 @@
         "/CreateNew": {
             "attrs": {
                 "directory": {
-                    "comment": "Path to usd file you want to create", 
+                    "comment": "Full path to your usd file on disk.", 
                     "type": "raw", 
-                    "value": "/${name}.${type}"
+                    "value": "${path}${name}.${type}"
                 }, 
                 "name": {
-                    "comment": "name of usd file", 
+                    "comment": "Name of usd file", 
                     "type": "raw", 
                     "value": "HelloWorld"
                 }, 
-                "stage": {}, 
+                "path": {
+                    "comment": "Directory path", 
+                    "type": "raw", 
+                    "value": "./"
+                }, 
+                "stage": {
+                    "comment": "Returns self.stage"
+                }, 
                 "type": {
                     "comment": "type of usd file (usd, usdc, usda, usdz)", 
                     "type": "raw", 
@@ -87,44 +94,75 @@
         }, 
         "/GetAttribute": {
             "attrs": {
-                "attr": {
+                "Attr": {
+                    "comment": "Returns self.Attr"
+                }, 
+                "attr_name": {
+                    "comment": "Name of usd attribute you want to get", 
                     "type": "raw", 
                     "value": "extent"
+                }, 
+                "prim": {
+                    "comment": "Prim you want to get attribute from"
                 }
             }, 
             "code": [
-                "Attr = sphere.GetAttribute('${attr}')", 
-                "Attr.Get()"
+                "self.Attr = self.prim.GetAttribute('${attr_name}')", 
+                "self.Attr.Get()"
             ]
         }, 
         "/GetDefaultPrim": {
+            "attrs": {
+                "name": {
+                    "comment": "Name of default prim", 
+                    "type": "raw", 
+                    "value": "/hello"
+                }, 
+                "stage": {
+                    "comment": "Stage you want to get default prim on"
+                }
+            }, 
             "code": [
-                "stage.GetDefaultPrim(hello)"
+                "self.stage.GetDefaultPrim('${name}')"
             ]
         }, 
         "/GetPrimAtPath": {
             "attrs": {
+                "prim": {
+                    "comment": "Returns self.prim"
+                }, 
                 "prim_path": {
+                    "comment": "Path to prim", 
                     "type": "raw", 
                     "value": "/hello"
+                }, 
+                "stage": {
+                    "comment": "Stage you want to get prim from."
                 }
             }, 
             "code": [
-                "prim = stage.GetPrimAtPath('${prim_path}')"
+                "self.prim = self.stage.GetPrimAtPath('${prim_path}')"
             ]
         }, 
         "/GetPropertyNames": {
             "attrs": {
-                "prim": {}
+                "prim": {
+                    "comment": "Prim you want to get propery names from"
+                }, 
+                "property_names": {
+                    "comment": "Returns self.propery_names"
+                }
             }, 
             "code": [
-                "property_names = self.prim.GetPropertyNames()", 
-                "print(property_names)"
+                "self.property_names = self.prim.GetPropertyNames()", 
+                "# print(property_names)"
             ]
         }, 
         "/RootLayerSave": {
             "attrs": {
-                "stage": {}
+                "stage": {
+                    "comment": "Stage you wish to save out."
+                }
             }, 
             "code": [
                 "self.stage.GetRootLayer().Save()"
@@ -132,44 +170,71 @@
         }, 
         "/SetAttribute": {
             "attrs": {
-                "attr": {
+                "Attr": {
+                    "comment": "Returns self.Attr"
+                }, 
+                "attr_name": {
+                    "comment": "Name of usd attribute you want to set", 
                     "type": "raw", 
                     "value": "radius"
                 }, 
+                "prim": {
+                    "comment": "Prim you want to get attribute from"
+                }, 
                 "value": {
+                    "comment": "Value you want to give your Atrribute", 
                     "type": "int", 
                     "value": "2"
                 }
             }, 
             "code": [
-                "Attr = sphere.GetAttribute('${attr}')", 
-                "Attr.Set(${value})"
+                "self.Attr = self.prim.GetAttribute('${attr_name}')", 
+                "self.Attr.Set(${value})"
             ]
         }, 
         "/SetDefaultPrim": {
             "attrs": {
                 "name": {
+                    "comment": "Name of default prim", 
                     "type": "raw", 
-                    "value": "stage.GetPrimAtPath('/${prim_name}')"
+                    "value": "/hello"
                 }, 
-                "prim_name": {
-                    "type": "raw", 
-                    "value": "hello"
+                "stage": {
+                    "comment": "Stage you want to set default prim on"
                 }
             }, 
             "code": [
-                "stage.SetDefaultPrim(${name})"
+                "self.stage.SetDefaultPrim('${name}')"
             ]
         }, 
         "/StageOpen": {
             "attrs": {
-                "directory": {}, 
-                "name": {}, 
-                "stage": {}, 
-                "type": {}
+                "directory": {
+                    "comment": "Full path to your usd file on disk.", 
+                    "type": "raw", 
+                    "value": "${path}${name}.${type}"
+                }, 
+                "name": {
+                    "comment": "Name of usd file", 
+                    "type": "raw", 
+                    "value": "HelloWorld"
+                }, 
+                "path": {
+                    "comment": "Directory path", 
+                    "type": "raw", 
+                    "value": "./"
+                }, 
+                "stage": {
+                    "comment": "Returns self.stage"
+                }, 
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
+                    "type": "raw", 
+                    "value": "usda"
+                }
             }, 
             "code": [
-                "self.stage = Usd.Stage.Open(\"RefExample.usda\")"
+                "self.stage = Usd.Stage.Open('${directory}')"
             ]
         }
     }

@@ -28,10 +28,13 @@
         "/AddVariant": {
             "attrs": {
                 "variant_name": {
+                    "comment": "The name a variant that will be added to a choosen variant set", 
                     "type": "raw", 
                     "value": "red"
                 }, 
-                "vset": {}
+                "vset": {
+                    "comment": "Variant set to add variant too"
+                }
             }, 
             "code": [
                 "self.vset.AddVariant('${variant_name}')"
@@ -39,12 +42,17 @@
         }, 
         "/AddVariantSet": {
             "attrs": {
-                "prim": {}, 
+                "prim": {
+                    "comment": "Prim you want to add a variant too"
+                }, 
                 "variant_set_name": {
+                    "comment": "Choose your Variant sets name", 
                     "type": "raw", 
                     "value": "shadingVariant"
                 }, 
-                "vset": {}
+                "vset": {
+                    "comment": "Returns self.vset"
+                }
             }, 
             "code": [
                 "self.vset = self.prim.GetVariantSets().AddVariantSet('${variant_set_name}')"
@@ -52,7 +60,9 @@
         }, 
         "/GetVariantEditContext": {
             "attrs": {
-                "vset": {}
+                "vset": {
+                    "comment": "varaint set you want to edit context of"
+                }
             }, 
             "code": [
                 "with self.vset.GetVariantEditContext():", 
@@ -63,10 +73,13 @@
         "/SetVariantSelection": {
             "attrs": {
                 "variant_name": {
+                    "comment": "Name of variant you want to set as your selection", 
                     "type": "raw", 
                     "value": "red"
                 }, 
-                "vset": {}
+                "vset": {
+                    "comment": "variant set that contains your variant"
+                }
             }, 
             "code": [
                 "self.vset.SetVariantSelection('${variant_name}')"

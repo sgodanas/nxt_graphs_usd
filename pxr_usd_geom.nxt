@@ -49,6 +49,10 @@
             "/Sphere": [
                 585.1813685027879, 
                 7.224461339540592
+            ], 
+            "/Xform": [
+                925.9135073366447, 
+                622.1437762230452
             ]
         }
     }, 
@@ -65,7 +69,8 @@
                 "BasisCurves", 
                 "NurbsPatch", 
                 "NurbsCurves", 
-                "Sphere"
+                "Sphere", 
+                "Xform"
             ], 
             "code": [
                 "from pxr import Usd, UsdGeom", 
@@ -74,137 +79,224 @@
         }, 
         "/BasisCurves": {
             "attrs": {
+                "basis_curves": {
+                    "comment": "Returns self.basis_curves"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "basis_curves = UsdGeom.BasisCurves.Define(stage, prim.GetName())"
+                "self.basis_curves = UsdGeom.BasisCurves.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Capsule": {
             "attrs": {
+                "capsule": {
+                    "comment": "Returns self.capsule"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "capsule = UsdGeom.Capsule.Define(stage, prim.GetName())"
+                "self.capsule = UsdGeom.Capsule.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Cone": {
             "attrs": {
+                "cone": {
+                    "comment": "Returns self.cone"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "cone = UsdGeom.Cone.Define(stage, prim.GetName())"
+                "self.cone = UsdGeom.Cone.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Cube": {
             "attrs": {
+                "cube": {
+                    "comment": "Returns self.cube"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "cube = UsdGeom.Cube.Define(stage, prim.GetName())"
+                "self.cube = UsdGeom.Cube.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Cylinder": {
             "attrs": {
+                "cylinder": {
+                    "comment": "Returns self.cylinder"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "cylinder = UsdGeom.Cylinder.Define(stage, prim.GetName())"
+                "self.cylinder = UsdGeom.Cylinder.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/DefinePrim": {
             "attrs": {
+                "prim": {
+                    "comment": "Returns self.prim"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
                     "value": "/hello"
                 }, 
-                "type": {
+                "stage": {
+                    "comment": "Stage prim will be added too"
+                }, 
+                "type_usdgeom": {
+                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html", 
                     "type": "raw", 
                     "value": "Xform"
                 }
             }, 
             "code": [
-                "xform = stage.DefinePrim('${prim_name}', '${type}')"
+                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
             ]
         }, 
         "/Mesh": {
             "attrs": {
+                "mesh": {
+                    "comment": "Returns self.mesh"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "mesh = UsdGeom.Mesh.Define(stage, prim.GetName())"
+                "self.mesh = UsdGeom.Mesh.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/NurbsCurves": {
             "attrs": {
+                "nurbs_curves": {
+                    "comment": "Returns self.nurbs_curves"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "nurbs_curves = UsdGeom.NurbsCurves.Define(stage, prim.GetName())"
+                "self.nurbs_curves = UsdGeom.NurbsCurves.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/NurbsPatch": {
             "attrs": {
+                "nurbs_patch": {
+                    "comment": "Returns self.nurbs_patch"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "nurbs_patch = UsdGeom.NurbsPatch.Define(stage, prim.GetName())"
+                "self.nurbs_patch = UsdGeom.NurbsPatch.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Points": {
             "attrs": {
+                "points": {
+                    "comment": "Returns self.points"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "points = UsdGeom.Points.Define(stage, prim.GetName())"
+                "self.points = UsdGeom.Points.Define(self.stage, '${prim_name}')"
             ]
         }, 
         "/Sphere": {
+            "start_point": false, 
             "attrs": {
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "hello/world"
+                    "value": "/hello/world"
+                }, 
+                "sphere": {
+                    "comment": "Returns self.sphere"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
                 }
             }, 
             "code": [
-                "prim = Usd.Prim('${prim_name}')", 
-                "sphere = UsdGeom.Sphere.Define(stage, prim.GetName())"
+                "self.sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
+            ]
+        }, 
+        "/Xform": {
+            "attrs": {
+                "Xform": {
+                    "comment": "Returns self.Xform"
+                }, 
+                "prim_name": {
+                    "comment": "Name of the prim that will be made", 
+                    "type": "raw", 
+                    "value": "/hello/world"
+                }, 
+                "stage": {
+                    "comment": "Stage prim will be added too"
+                }
+            }, 
+            "code": [
+                "self.Xform = UsdGeom.Xform.Define(self.stage, '${prim_name}')"
             ]
         }
     }

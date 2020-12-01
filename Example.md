@@ -1,7 +1,7 @@
-# How to guide for the usd library 
+# The usd library 
 
 The usd library graphs are built up with a few layers that each 
-hold some core node for building up usd assets. 
+hold some core node for building usd assets and files. 
 
 These single nodes when combined(parented or strung together)
  can build more complicated usd concepts. Please see the examples in this git repo
@@ -35,12 +35,12 @@ These single nodes when combined(parented or strung together)
  - Cone: Construct a UsdGeom Cone on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_cone.html#details)
  - Points: Construct a UsdGeom Points on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_points.html#details)
  - NurbsPatch: Construct a UsdGeom NurbsPatch on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_nurbs_patch.html#details)
- - BasisCurves:
- - Cylinder:
- - NurbsCurves:
- - Capsule:
- - DefinePrim
-
+ - BasisCurves: Construct a UsdGeom BasisCurves on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_basis_curves.html#details)
+ - Cylinder: Construct a UsdGeom Cylinder on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_cylinder.html#details)
+ - NurbsCurves: Construct a UsdGeom NurbsCurves on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_nurbs_curves.html#details)
+ - Capsule: Construct a UsdGeom Capsule on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_capsule.html#details)
+ - DefinePrim: Construct a UsdGeom DefinePrim on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730)
+ - Xform: Construct a UsdGeom Xform on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform.html#details)
 
 ### pxr_usd_variants
 

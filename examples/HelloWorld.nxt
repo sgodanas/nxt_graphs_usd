@@ -1,175 +1,76 @@
 {
     "version": "1.17", 
     "alias": "HelloWorld", 
-    "color": "#e83723", 
+    "color": "#01697f", 
     "mute": false, 
     "solo": false, 
     "references": [
-        "../pxr_usd_tools.nxt"
+        "/home/sue.sauer/PycharmProjects/nxt_graphs_usd/pxr_usd_tools.nxt"
     ], 
     "meta_data": {
         "positions": {
-            "/BasisCurves": [
-                505.42325971229366, 
-                -46.634155658886755
+            "/CreateNew_hello": [
+                -58.0, 
+                -313.1071428571429
             ], 
-            "/Capsule": [
-                516.2673770091037, 
-                76.51207547304725
+            "/DefinePrim_pasted": [
+                134.0, 
+                -163.0
             ], 
-            "/Cone": [
-                516.5652902679016, 
-                187.5957349197068
+            "/RootLayerSave_pasted": [
+                166.0, 
+                -137.0
             ], 
-            "/CreateNew": [
-                15.096740205601549, 
-                -57.91045209912938
+            "/Sphere_pasted": [
+                88.0, 
+                -135.0
             ], 
-            "/CreateNew_hello_world": [
-                -201.0816781402915, 
-                -359.4854661880358
-            ], 
-            "/Cube": [
-                516.5301179122151, 
-                298.94761907623587
-            ], 
-            "/Cylinder": [
-                519.377749116858, 
-                399.41576822482455
-            ], 
-            "/DefinePrim": [
-                517.5409242309113, 
-                493.68097780242965
-            ], 
-            "/DefinePrim_hello": [
-                398.9067494809716, 
-                -146.0564082745289
-            ], 
-            "/GetDefaultPrim": [
-                24.122802284072208, 
-                706.7087632111525
-            ], 
-            "/Mesh": [
-                893.9643408628838, 
-                77.00757839839353
-            ], 
-            "/ModelApi": [
-                1686.497118713328, 
-                -32.06719873609849
-            ], 
-            "/NurbsCurves": [
-                887.2677142528441, 
-                188.53250175128085
-            ], 
-            "/NurbsPatch": [
-                887.3854349233926, 
-                295.2900043963415
-            ], 
-            "/Points": [
-                891.6044648086256, 
-                -40.91445814354758
-            ], 
-            "/RootLayerSave_hello_world": [
-                581.0846350707062, 
-                -122.49892306895973
-            ], 
-            "/SetAssetIdentifier": [
-                1681.7464226042766, 
-                419.24893162380624
-            ], 
-            "/SetAssetName": [
-                1683.9846218818966, 
-                214.9674846321261
-            ], 
-            "/SetAssetVersion": [
-                1683.0682864063695, 
-                316.39272653693433
-            ], 
-            "/SetKind": [
-                1678.2739302166608, 
-                97.4980236649646
-            ], 
-            "/SetPayloadAssetDependencies": [
-                1678.1834005224878, 
-                515.4505278321017
-            ], 
-            "/Sphere": [
-                884.956908311559, 
-                398.9543058166465
-            ], 
-            "/Sphere_world": [
-                574.802639015888, 
-                -136.63341419230125
-            ], 
-            "/StageOpen": [
-                8.934371216323086, 
-                48.24560456814442
-            ], 
-            "/Xform": [
-                879.1387210565812, 
-                493.62581305959935
+            "/StageOpen_pasted": [
+                3.0, 
+                -190.0
             ]
         }, 
         "collapse": {
-            "/AddVariant": true, 
-            "/AddVariantSet": true, 
-            "/BasisCurves": true, 
-            "/Capsule": false, 
-            "/Cone": false, 
-            "/CreateNew": true, 
-            "/CreateNew_hello_world": false, 
-            "/CreateNew_hello_world/DefinePrim_hello": false, 
-            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": false, 
-            "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": true, 
-            "/CreateNew_pasted": true, 
-            "/Cube": true, 
-            "/Cylinder": false, 
-            "/DefinePrim": false, 
-            "/GetVariantEditContext": true, 
-            "/Mesh": false, 
-            "/ModelApi": true, 
-            "/NurbsCurves": true, 
-            "/NurbsPatch": false, 
-            "/Points": true, 
-            "/SetAssetIdentifier": false, 
-            "/SetAssetName": false, 
-            "/SetAssetVersion": true, 
-            "/SetKind": false, 
-            "/SetVariantSelection": true, 
-            "/Sphere": true, 
-            "/StageOpen": true, 
-            "/Xform": false
+            "/CreateNew_hello": false, 
+            "/CreateNew_hello/StageOpen_hello": false, 
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false
         }
     }, 
     "nodes": {
         "/": {
             "child_order": [
-                "UsdView", 
-                "CreateNew_hello_world"
+                "CreateNew_hello"
             ], 
             "attrs": {
                 "USD_file": {
-                    "value": "'./HelloWorld3.usda'"
+                    "value": "'${path::}/HelloWorld.usda'"
                 }
             }
         }, 
-        "/CreateNew_hello_world": {
+        "/CreateNew_hello": {
             "start_point": true, 
             "child_order": [
-                "DefinePrim_hello"
+                "StageOpen_hello"
             ], 
             "attrs": {
                 "directory": {
-                    "comment": "Path to usd file you want to create", 
+                    "comment": "Full path to your usd file on disk.", 
                     "type": "raw", 
-                    "value": "./${name}.${type}"
+                    "value": "${path}/${name}.${type}"
                 }, 
                 "name": {
-                    "comment": "name of usd file", 
+                    "comment": "Name of usd file", 
                     "type": "raw", 
-                    "value": "HelloWorld3"
+                    "value": "HelloWorld"
                 }, 
-                "stage": {}, 
+                "path": {
+                    "comment": "Directory path", 
+                    "type": "raw", 
+                    "value": "${path::}"
+                }, 
+                "stage": {
+                    "comment": "Returns self.stage"
+                }, 
                 "type": {
                     "comment": "type of usd file (usd, usdc, usda, usdz)", 
                     "type": "raw", 
@@ -177,51 +78,95 @@
                 }
             }, 
             "code": [
-                "self.stage = None", 
-                "self.stage = Usd.Stage.CreateNew('${directory}')", 
-                ""
+                "if Sdf.Layer.GetLoadedLayers():", 
+                "    self.stage = Usd.Stage.Open('${directory}')", 
+                "else:", 
+                "    self.stage = Usd.Stage.CreateNew('${directory}')"
             ]
         }, 
-        "/CreateNew_hello_world/DefinePrim_hello": {
+        "/CreateNew_hello/StageOpen_hello": {
+            "child_order": [
+                "DefinePrim_hello"
+            ], 
+            "attrs": {
+                "USD_file": {
+                    "type": "raw", 
+                    "value": "${path::${name}.${type}}"
+                }, 
+                "directory": {
+                    "comment": "Full path to your usd file on disk.", 
+                    "type": "raw", 
+                    "value": "${path}/${name}.${type}"
+                }, 
+                "name": {
+                    "comment": "Name of usd file", 
+                    "type": "raw", 
+                    "value": "HelloWorld"
+                }, 
+                "path": {
+                    "comment": "Directory path", 
+                    "type": "raw", 
+                    "value": "${path::}"
+                }, 
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
+                    "type": "raw", 
+                    "value": "usda"
+                }
+            }, 
+            "code": [
+                "", 
+                "self.stage = Usd.Stage.Open('${USD_file}')"
+            ]
+        }, 
+        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": {
             "child_order": [
                 "Sphere_world"
             ], 
             "attrs": {
+                "prim": {
+                    "comment": "Returns self.prim"
+                }, 
                 "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
                     "value": "/hello"
                 }, 
-                "type": {
+                "type_usdgeom": {
+                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html", 
                     "type": "raw", 
                     "value": "Xform"
                 }
             }, 
             "code": [
-                "xform = self.stage.DefinePrim('${prim_name}', '${type}')"
+                "prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')", 
+                "", 
+                "self.prim = prim"
             ]
         }, 
-        "/CreateNew_hello_world/DefinePrim_hello/Sphere_world": {
+        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
+            "start_point": false, 
             "child_order": [
-                "RootLayerSave_hello_world"
+                "RootLayerSave_helloWorld"
             ], 
             "attrs": {
-                "sphere_name": {
+                "prim_name": {
+                    "comment": "Name of the prim that will be made", 
                     "type": "raw", 
-                    "value": "/world"
+                    "value": "/hello/world"
+                }, 
+                "sphere": {
+                    "comment": "Returns self.sphere"
                 }
             }, 
             "code": [
-                "sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}${sphere_name}')"
+                "self.sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
             ]
         }, 
-        "/CreateNew_hello_world/DefinePrim_hello/Sphere_world/RootLayerSave_hello_world": {
+        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
             "code": [
-                "self.stage.GetRootLayer().Save()", 
-                "self.stage = None"
+                "self.stage.GetRootLayer().Save()"
             ]
-        }, 
-        "/UsdView": {
-            "start_point": true
         }
     }
 }

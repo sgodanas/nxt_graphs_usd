@@ -71,10 +71,6 @@
                 "NurbsCurves", 
                 "Sphere", 
                 "Xform"
-            ], 
-            "code": [
-                "from pxr import Usd, UsdGeom", 
-                ""
             ]
         }, 
         "/BasisCurves": {

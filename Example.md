@@ -15,12 +15,12 @@ These single nodes when combined(parented or strung together)
 
 ##### nodes
 
- - CreateNew: 
- - StageOpen: 
- - RootLayerSave: 
- - GetPrimAtPath: 
- - GetPropertyNames: 
- - GetAttribute: 
+ - CreateNew: Creates a new empty layer with the given identifier.
+ - StageOpen: Attempt to find a matching existing stage in a cache if UsdStageCacheContext objects exist on the stack. Failing that, create a new stage and recursively compose prims defined within and referenced by the layer at filePath, which must already exist.
+ - RootLayerSave: Save out the Root layer to a stage.
+ - GetPrimAtPath: Returns the prim at the given path.
+ - GetPropertyNames: Return all of this prim's property names (attributes and relationships), including all builtin properties
+ - GetAttribute: Return a UsdAttribute with the name given.
  - SetAttribute: 
  - SetDefaultPrim: 
  - GetDefaultPrim: 

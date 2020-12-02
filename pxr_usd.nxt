@@ -58,8 +58,7 @@
                 "GetDefaultPrim"
             ], 
             "code": [
-                "from pxr import Usd", 
-                ""
+                "from pxr import Usd, Sdf, UsdGeom"
             ]
         }, 
         "/CreateNew": {
@@ -94,21 +93,23 @@
         }, 
         "/GetAttribute": {
             "attrs": {
-                "Attr": {
-                    "comment": "Returns self.Attr"
-                }, 
                 "attr_name": {
                     "comment": "Name of usd attribute you want to get", 
                     "type": "raw", 
                     "value": "extent"
+                }, 
+                "myAttr": {
+                    "comment": "Returns self.myAttr"
                 }, 
                 "prim": {
                     "comment": "Prim you want to get attribute from"
                 }
             }, 
             "code": [
-                "self.Attr = self.prim.GetAttribute('${attr_name}')", 
-                "self.Attr.Get()"
+                "if self.myAttr = self.prim.GetAttribute('${attr_name}'):", 
+                "    self.myAttr.Get()", 
+                "else:", 
+                "    print('myAttr was not defined/authored')"
             ]
         }, 
         "/GetDefaultPrim": {
@@ -170,13 +171,13 @@
         }, 
         "/SetAttribute": {
             "attrs": {
-                "Attr": {
-                    "comment": "Returns self.Attr"
-                }, 
                 "attr_name": {
                     "comment": "Name of usd attribute you want to set", 
                     "type": "raw", 
                     "value": "radius"
+                }, 
+                "myAttr": {
+                    "comment": "Returns self.myAttr"
                 }, 
                 "prim": {
                     "comment": "Prim you want to get attribute from"
@@ -188,8 +189,10 @@
                 }
             }, 
             "code": [
-                "self.Attr = self.prim.GetAttribute('${attr_name}')", 
-                "self.Attr.Set(${value})"
+                "if self.myAttr = self.prim.GetAttribute('${attr_name}'):", 
+                "    self.myAttr.Set(${value})", 
+                "else:", 
+                "    print('myAttr was not defined/authored')"
             ]
         }, 
         "/SetDefaultPrim": {

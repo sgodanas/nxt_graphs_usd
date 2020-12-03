@@ -143,8 +143,8 @@
                 43.469164609315044
             ],
             "/UsdCat": [
-                -513.4459187659925,
-                36.41388484663948
+                -518.4459187659925,
+                36.41388484663949
             ],
             "/UsdConvert": [
                 -511.29260807534945,
@@ -159,8 +159,8 @@
                 134.87534582509653
             ],
             "/UsdView": [
-                -514.9785931503686,
-                -68.97034729692433
+                -516.9785931503686,
+                -69.97034729692433
             ],
             "/Xform": [
                 882.1966463622368,
@@ -184,7 +184,7 @@
             "/SetKind": false,
             "/Sphere": true,
             "/StageOpen": false,
-            "/UsdCat": true,
+            "/UsdCat": false,
             "/UsdConvert": true,
             "/UsdDiff": true,
             "/UsdEdit": false,
@@ -206,7 +206,7 @@
                 "USD_file": {
                     "comment": "USD file you want to inspect",
                     "type": "raw",
-                    "value": "${path::}/tests/HelloWorld.usda"
+                    "value": "${path::}/examples/tests/HelloWorld.usda"
                 }
             }
         },
@@ -230,8 +230,7 @@
                 "    pass",
                 "elif platform == \"win32\":",
                 "    # Windows...",
-                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")",
-                ""
+                "    os.system(\"usdcat  ${USD_file}\")"
             ]
         },
         "/UsdConvert": {
@@ -279,14 +278,22 @@
             "start_point": true,
             "code": [
                 "import os",
-                "",
+                "from sys import platform",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdedit #",
                 "# ",
                 "# usage: usdedit [-h] [-n] [-f] usdFileName",
                 "",
-                "",
-                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdedit  ${USD_file};read -p $msg'\\\"\")"
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdedit  ${USD_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    os.system(\"usdedit  ${USD_file}\")",
+                ""
             ]
         },
         "/UsdView": {

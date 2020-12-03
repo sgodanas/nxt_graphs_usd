@@ -34,6 +34,14 @@
     },
     "nodes": {
         "/": {
+            "child_order": [
+                "ModelApi",
+                "SetAssetIdentifier",
+                "SetAssetName",
+                "SetAssetVersion",
+                "SetKind",
+                "SetPayloadAssetDependencies"
+            ],
             "code": [
                 "from pxr import Usd, Sdf, UsdGeom, Kind"
             ]

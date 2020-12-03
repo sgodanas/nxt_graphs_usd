@@ -46,6 +46,10 @@
                 938.9021047563213,
                 524.179802007739
             ],
+            "/Purpose": [
+                656.6116396702145,
+                607.844727440066
+            ],
             "/Sphere": [
                 585.1813685027879,
                 7.224461339540592
@@ -70,7 +74,8 @@
                 "NurbsPatch",
                 "NurbsCurves",
                 "Sphere",
-                "Xform"
+                "Xform",
+                "Purpose"
             ]
         },
         "/BasisCurves": {
@@ -256,6 +261,20 @@
             },
             "code": [
                 "self.points = UsdGeom.Points.Define(self.stage, '${prim_name}')"
+            ]
+        },
+        "/Purpose": {
+            "attrs": {
+                "prim": {},
+                "purpose_type": {
+                    "comment": "Can be: render, guide, proxy, default_",
+                    "type": "raw",
+                    "value": "render"
+                }
+            },
+            "code": [
+                "purpose = self.prim.CreatePurposeAttr()",
+                "purpose.Set(UsdGeom.Tokens.${purpose_type})"
             ]
         },
         "/Sphere": {

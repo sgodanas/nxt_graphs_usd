@@ -86,6 +86,7 @@ I will be adding to these as I go along.
 
 # Example Layers
  - The following nxt graphs build example usd file based off of Pixar's [Tutorials](https://graphics.pixar.com/usd/docs/USD-Tutorials.html).
+ - For and in depth look into how NXT works please see: [NXT_Tutorials](https://nxt-dev.github.io/tutorials/)
  - [HelloWorld.nxt](examples/HelloWorld.nxt)
     - Please see [HelloWorld](https://graphics.pixar.com/usd/docs/Hello-World---Creating-Your-First-USD-Stage.html) from pixar.
 

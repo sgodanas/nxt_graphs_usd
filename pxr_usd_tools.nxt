@@ -193,7 +193,7 @@
             "start_point": true,
             "code": [
                 "import os",
-                "",
+                "from sys import platform",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
                 "",
@@ -201,8 +201,16 @@
                 "#               [--mask PRIMPATH[,PRIMPATH...]]",
                 "#               inputFiles [inputFiles ...]",
                 "",
-                "",
-                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")"
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")",
+                ""
             ]
         },
         "/UsdConvert": {

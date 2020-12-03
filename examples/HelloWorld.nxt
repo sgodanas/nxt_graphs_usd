@@ -47,7 +47,8 @@
             ],
             "attrs": {
                 "USD_file": {
-                    "value": "'${path::}/HelloWorld.usda'"
+                    "type": "raw",
+                    "value": "${path::}/tests/HelloWorld.usda"
                 }
             }
         },
@@ -69,7 +70,7 @@
                 "path": {
                     "comment": "Directory path",
                     "type": "raw",
-                    "value": "./"
+                    "value": "${path::}/tests/"
                 },
                 "stage": {
                     "comment": "Returns self.stage"
@@ -97,25 +98,6 @@
                 "DefinePrim_hello"
             ],
             "attrs": {
-                "USD_file": {
-                    "type": "raw",
-                    "value": "${path::${name}.${type}}"
-                },
-                "directory": {
-                    "comment": "Full path to your usd file on disk.",
-                    "type": "raw",
-                    "value": "${path}/${name}.${type}"
-                },
-                "name": {
-                    "comment": "Name of usd file",
-                    "type": "raw",
-                    "value": "HelloWorld"
-                },
-                "path": {
-                    "comment": "Directory path",
-                    "type": "raw",
-                    "value": "${path::}"
-                },
                 "type": {
                     "comment": "type of usd file (usd, usdc, usda, usdz)",
                     "type": "raw",

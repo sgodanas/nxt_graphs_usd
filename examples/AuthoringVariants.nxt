@@ -119,8 +119,8 @@
                 -146.68700652528742
             ],
             "/OpenOrFind_hello": [
-                -652.4809777331303,
-                -791.499612912949
+                -403.412957631264,
+                -821.138593953661
             ],
             "/OpenOrFind_hello2": [
                 -274.74709158704616,
@@ -222,7 +222,7 @@
             "/OpenOrFind_hello": false,
             "/OpenOrFind_hello/StageOpen_hello": false,
             "/OpenOrFind_pasted": false,
-            "/UsdView": false
+            "/UsdView": true
         }
     },
     "nodes": {

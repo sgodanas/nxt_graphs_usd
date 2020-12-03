@@ -15,6 +15,8 @@ These single nodes when combined(parented or strung together)
 
 ##### nodes
 
+![Alt text](images/coreusd.png?raw=true "CoreNodes")
+
  - CreateNew: Creates a new empty layer with the given identifier.
  - StageOpen: Attempt to find a matching existing stage in a cache if UsdStageCacheContext objects exist on the stack. Failing that, create a new stage and recursively compose prims defined within and referenced by the layer at filePath, which must already exist.
  - RootLayerSave: Save out the Root layer to a stage.
@@ -28,6 +30,8 @@ These single nodes when combined(parented or strung together)
 ### pxr_usd_geom
 
 ##### nodes
+
+![Alt text](images/geom.png?raw=true "GeomNodes")
 
  - Sphere: Construct a UsdGeom Sphere on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_sphere.html#details)
  - Cube: Construct a UsdGeom Cube on UsdPrim. [details](https://graphics.pixar.com/usd/docs/api/class_usd_geom_cube.html#details)
@@ -46,6 +50,8 @@ These single nodes when combined(parented or strung together)
 
 ##### nodes
 
+![Alt text](images/variants.png?raw=true "VariantNodes")
+
  - AddVariantSet: Add a variant set to a prim of your choice.
  - AddVariant: Add a variant to a variant set.
  - SetVariantSelection: Set a variant selection of your choice.
@@ -55,6 +61,8 @@ These single nodes when combined(parented or strung together)
 
 ##### nodes
 
+![Alt text](images/modelapi.png?raw=true "ModelApiNodes")
+
  - SetKind: Set a kind for a usd prim
  - SetAssetName: Give a prim a asset name
  - SetAssetVersion: Give a prim an asset version
@@ -62,6 +70,8 @@ These single nodes when combined(parented or strung together)
 ### pxr_usd_tools
 
 ##### nodes
+
+![Alt text](images/tools.png?raw=true "ToolNodes")
 
  - UsdView: Open up a usdview form inside nxt
  - UsdCat: Open up a terminal and cat usd file from within nxt

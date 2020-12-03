@@ -21,7 +21,7 @@ ____________________________________
 Supported Platforms
 -------------------
 
-These graphs have been tested on Centos 7
+These graphs have been tested on Centos 7.7
 
 Dependencies
 ------------

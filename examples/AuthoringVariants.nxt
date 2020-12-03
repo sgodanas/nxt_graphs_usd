@@ -14,6 +14,10 @@
     }, 
     "meta_data": {
         "positions": {
+            "/AddVariantSet_color": [
+                -241.8855668803359, 
+                -506.43889072980176
+            ], 
             "/AddVariantSet_pasted": [
                 -97.09829153161455, 
                 -291.69389051106543
@@ -27,8 +31,8 @@
                 -164.48536009344025
             ], 
             "/CreateNew_hello": [
-                -666.7876226130587, 
-                -811.4163032805952
+                -263.98044596425393, 
+                -838.0342745528933
             ], 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": [
                 0.0, 
@@ -62,6 +66,22 @@
                 1675.0301220473175, 
                 -137.5144944082773
             ], 
+            "/OpenOrFind": [
+                12.806008506175829, 
+                -146.68700652528742
+            ], 
+            "/OpenOrFind_hello": [
+                -652.4809777331303, 
+                -791.499612912949
+            ], 
+            "/OpenOrFind_hello2": [
+                -274.74709158704616, 
+                -674.0617204614396
+            ], 
+            "/OpenOrFind_pasted": [
+                -273.92293631866187, 
+                -869.2635116241406
+            ], 
             "/RootLayerSave_helloWorld": [
                 -455.7730779667104, 
                 -199.272530563115
@@ -90,6 +110,10 @@
                 -85.00207291935354, 
                 -379.5903481061672
             ], 
+            "/StageOpen_hello": [
+                -181.69095242006227, 
+                -795.9437151723561
+            ], 
             "/Xform": [
                 871.7934488488615, 
                 494.36030479355736
@@ -97,19 +121,22 @@
         }, 
         "collapse": {
             "/CreateNew_hello": false, 
-            "/CreateNew_hello/StageOpen_hello": false, 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": false, 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": false, 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": false, 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/RootLayerSave_helloWorld": true, 
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": true
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": true, 
+            "/OpenOrFind_hello/StageOpen_hello": false, 
+            "/OpenOrFind_pasted": false
         }
     }, 
     "nodes": {
         "/": {
             "child_order": [
-                "UsdView"
+                "UsdView", 
+                "AddVariantSet_color", 
+                "OpenOrFind_hello"
             ], 
             "attrs": {
                 "USD_file": {
@@ -121,131 +148,25 @@
                 "from pxr import Usd, Sdf, UsdGeom"
             ]
         }, 
-        "/CreateNew_hello": {
+        "/OpenOrFind_hello": {
             "start_point": true, 
             "child_order": [
                 "StageOpen_hello"
             ], 
             "attrs": {
-                "directory": {
-                    "comment": "Full path to your usd file on disk.", 
-                    "type": "raw", 
-                    "value": "${path}/${name}.${type}"
-                }, 
-                "name": {
-                    "comment": "Name of usd file", 
-                    "type": "raw", 
-                    "value": "AuthorVariants"
-                }, 
-                "path": {
-                    "comment": "Directory path", 
-                    "type": "raw", 
-                    "value": "${path::}"
-                }, 
-                "stage": {
-                    "comment": "Returns self.stage", 
-                    "type": "raw"
-                }, 
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
-                    "type": "raw", 
-                    "value": "usda"
-                }
-            }, 
-            "code": [
-                "if Sdf.Layer.GetLoadedLayers():", 
-                "    self.stage = Usd.Stage.Open('${directory}')", 
-                "else:", 
-                "    self.stage = Usd.Stage.CreateNew('${directory}')"
-            ]
-        }, 
-        "/CreateNew_hello/StageOpen_hello": {
-            "child_order": [
-                "DefinePrim_hello"
-            ], 
-            "attrs": {
-                "USD_file": {
-                    "comment": "USD file you want to inspect", 
-                    "type": "raw", 
-                    "value": "${path::${name}.${type}}"
-                }, 
-                "directory": {
-                    "comment": "Full path to your usd file on disk.", 
-                    "type": "raw", 
-                    "value": "${path}/${name}.${type}"
-                }, 
                 "name": {
                     "value": "AuthorVariants"
-                }, 
-                "path": {
-                    "comment": "Directory path", 
-                    "type": "raw", 
-                    "value": "${path::}"
-                }, 
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
-                    "type": "raw", 
-                    "value": "usda"
                 }
-            }, 
-            "code": [
-                "self.stage = Usd.Stage.Open('${USD_file}')"
-            ]
+            }
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": {
-            "child_order": [
-                "Sphere_world"
-            ], 
+        "/OpenOrFind_hello/StageOpen_hello": {
             "attrs": {
-                "prim": {
-                    "comment": "Returns self.prim", 
-                    "type": "raw"
-                }, 
-                "prim_name": {
-                    "comment": "Name of the prim that will be made", 
-                    "type": "raw", 
-                    "value": "/hello"
-                }, 
-                "type_usdgeom": {
-                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html", 
-                    "type": "raw", 
-                    "value": "Xform"
+                "name": {
+                    "value": "AuthorVariants"
                 }
-            }, 
-            "code": [
-                "prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')", 
-                "", 
-                "self.prim = prim"
-            ]
+            }
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
-            "start_point": false, 
-            "child_order": [
-                "RootLayerSave_helloWorld", 
-                "AddVariantSet_color"
-            ], 
-            "attrs": {
-                "prim_name": {
-                    "comment": "Name of the prim that will be made", 
-                    "type": "raw", 
-                    "value": "/hello/world"
-                }, 
-                "sphere": {
-                    "comment": "Returns self.sphere", 
-                    "type": "raw"
-                }, 
-                "type_usdgeom": {
-                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html", 
-                    "type": "raw", 
-                    "value": "Sphere"
-                }
-            }, 
-            "code": [
-                "self.sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')", 
-                ""
-            ]
-        }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": {
             "child_order": [
                 "AddVariant_red"
             ], 
@@ -263,7 +184,7 @@
                 "self.vset = self.prim.GetVariantSets().AddVariantSet('${variant_set_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": {
             "child_order": [
                 "AddVariant_blue"
             ], 
@@ -278,7 +199,7 @@
                 "self.vset.AddVariant('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue": {
             "child_order": [
                 "AddVariant_green"
             ], 
@@ -293,7 +214,7 @@
                 "self.vset.AddVariant('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green": {
             "child_order": [
                 "SetVariantSelection_red"
             ], 
@@ -308,7 +229,7 @@
                 "self.vset.AddVariant('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red": {
             "child_order": [
                 "GetVariantEditContext_red"
             ], 
@@ -323,7 +244,7 @@
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": {
             "child_order": [
                 "SetVariantSelection_blue"
             ], 
@@ -339,7 +260,7 @@
                 "    "
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue": {
             "child_order": [
                 "GetVariantEditContext_blue"
             ], 
@@ -354,7 +275,7 @@
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": {
             "child_order": [
                 "SetVariantSelection_green"
             ], 
@@ -364,7 +285,7 @@
                 ""
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green": {
             "child_order": [
                 "GetVariantEditContext_green"
             ], 
@@ -379,7 +300,7 @@
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": {
             "child_order": [
                 "RootLayerSave_pasted"
             ], 
@@ -389,12 +310,12 @@
                 ""
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green/RootLayerSave_pasted": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green/RootLayerSave_pasted": {
             "code": [
                 "self.stage.GetRootLayer().Save()"
             ]
         }, 
-        "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
             "enabled": false
         }, 
         "/UsdView": {

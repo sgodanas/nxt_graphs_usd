@@ -26,6 +26,10 @@
                 0, 
                 301
             ], 
+            "/OpenOrFind": [
+                108.26898100675972, 
+                835.8831006758438
+            ], 
             "/RootLayerSave": [
                 0, 
                 74
@@ -55,7 +59,8 @@
                 "SetAttribute", 
                 "SetDefaultPrim", 
                 "StageOpen", 
-                "GetDefaultPrim"
+                "GetDefaultPrim", 
+                "OpenOrFind"
             ], 
             "code": [
                 "from pxr import Usd, Sdf, UsdGeom"
@@ -157,6 +162,44 @@
             "code": [
                 "self.property_names = self.prim.GetPropertyNames()", 
                 "# print(property_names)"
+            ]
+        }, 
+        "/OpenOrFind": {
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.", 
+                    "type": "raw", 
+                    "value": "${path}${name}.${type}"
+                }, 
+                "name": {
+                    "comment": "Name of usd file", 
+                    "type": "raw", 
+                    "value": "HelloWorld"
+                }, 
+                "path": {
+                    "comment": "Directory path", 
+                    "type": "raw", 
+                    "value": "./"
+                }, 
+                "stage": {
+                    "comment": "Returns self.stage"
+                }, 
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
+                    "type": "raw", 
+                    "value": "usda"
+                }
+            }, 
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):", 
+                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')", 
+                "    if not root_layer:", 
+                "        if Sdf.Layer.GetLoadedLayers():", 
+                "            for layer in Sdf.Layer.GetLoadedLayers():", 
+                "                temp_stage = Usd.Stage.Open(layer)", 
+                "                temp_stage = None", 
+                "        root_layer = Sdf.Layer.CreateNew('${directory}')", 
+                "    stage = Usd.Stage.Open(root_layer)"
             ]
         }, 
         "/RootLayerSave": {

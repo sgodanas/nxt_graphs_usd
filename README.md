@@ -21,14 +21,14 @@ ____________________________________
 Supported Platforms
 -------------------
 
-These graphs have been tested on Centos 7.7
+These graphs have been tested on Centos 7.7 and Windows 10
 
 Dependencies
 ------------
 
 The following dependencies are required:
 
- - [Python](https://python.org)
+ - [Python](https://python.org) It is python 2.7 and 3.7 compatible.
  - Please see NXT and USDs documentation for their dependencies.
 
 **usdview**

@@ -1,64 +1,64 @@
 {
-    "version": "1.17", 
-    "alias": "pxr_usd_model_api", 
-    "color": "#6e33bb", 
-    "mute": false, 
-    "solo": false, 
+    "version": "1.17",
+    "alias": "pxr_usd_model_api",
+    "color": "#6e33bb",
+    "mute": false,
+    "solo": false,
     "meta_data": {
         "positions": {
             "/SetAssetName": [
-                1778.046587678167, 
+                1778.046587678167,
                 128.33397955302254
-            ], 
+            ],
             "/SetAssetVersion": [
-                1883.611635375008, 
+                1883.611635375008,
                 277.36698806621
-            ], 
+            ],
             "/SetKind": [
-                1767.5641178881224, 
+                1767.5641178881224,
                 11.672593231336657
             ]
         }
-    }, 
+    },
     "nodes": {
         "/SetAssetName": {
             "attrs": {
                 "asset_name": {
-                    "type": "raw", 
+                    "type": "raw",
                     "value": "some_asset"
-                }, 
+                },
                 "prim": {}
-            }, 
+            },
             "code": [
                 "model = Usd.ModelAPI(self.prim).SetAssetName('${asset_name}')"
             ]
-        }, 
+        },
         "/SetAssetVersion": {
             "attrs": {
                 "asset_version": {
-                    "type": "raw", 
+                    "type": "raw",
                     "value": "v001"
-                }, 
+                },
                 "prim": {}
-            }, 
+            },
             "code": [
-                "model = Usd.ModelAPI(self.prim).SetAssetVersion('${asset_version}')", 
-                "model.SetAssetIdentifier(\"some/path/to/file.usda\")", 
-                "model.SetPayloadAssetDependencies(", 
-                "    Sdf.AssetPathArray(", 
-                "        [Sdf.AssetPath(\"something.usd\"), Sdf.AssetPath(\"another/thing.usd\")]", 
-                "    )", 
+                "model = Usd.ModelAPI(self.prim).SetAssetVersion('${asset_version}')",
+                "model.SetAssetIdentifier(\"some/path/to/file.usda\")",
+                "model.SetPayloadAssetDependencies(",
+                "    Sdf.AssetPathArray(",
+                "        [Sdf.AssetPath(\"something.usd\"), Sdf.AssetPath(\"another/thing.usd\")]",
+                "    )",
                 ")"
             ]
-        }, 
+        },
         "/SetKind": {
             "attrs": {
                 "kind": {
-                    "type": "raw", 
+                    "type": "raw",
                     "value": "Kind.Tokens.component"
-                }, 
+                },
                 "prim": {}
-            }, 
+            },
             "code": [
                 "Usd.ModelAPI(self.prim).SetKind(${kind})"
             ]

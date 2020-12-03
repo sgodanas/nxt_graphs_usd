@@ -91,6 +91,15 @@ I will be adding to these as I go along.
 
 ![Alt text](images/helloworld.png?raw=true "HelloWorld")
 
+You can open up a usdview from inside NXT by running the usdview node.
+Please insure you are running the correct path to your file.
+
+![Alt text](images/usdviewpath.png?raw=true "usdviewPath")
+
+Then simple execute from selected:
+
+![Alt text](images/openupusdview.png?raw=true "Usdview")
+
  - [HelloWorldRedux.nxt](examples/HelloWorldRedux.nxt)
     - Please see [helloWorldRedux](https://graphics.pixar.com/usd/docs/Hello-World-Redux---Using-Generic-Prims.html) from pixar.
 

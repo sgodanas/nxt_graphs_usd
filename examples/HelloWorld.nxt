@@ -1,176 +1,176 @@
 {
-    "version": "1.17", 
-    "alias": "HelloWorld", 
-    "color": "#01697f", 
-    "mute": false, 
-    "solo": false, 
+    "version": "1.17",
+    "alias": "HelloWorld",
+    "color": "#01697f",
+    "mute": false,
+    "solo": false,
     "references": [
-        "pxr_usd_tools.nxt"
-    ], 
+        "../pxr_usd_tools.nxt"
+    ],
     "meta_data": {
         "positions": {
             "/DefinePrim_pasted": [
-                134.0, 
+                134.0,
                 -163.0
-            ], 
+            ],
             "/OpenOrFind_hello": [
-                -67.522590305291, 
+                -67.522590305291,
                 -570.449469820562
-            ], 
+            ],
             "/RootLayerSave_pasted": [
-                166.0, 
+                166.0,
                 -137.0
-            ], 
+            ],
             "/Sphere_pasted": [
-                88.0, 
+                88.0,
                 -135.0
-            ], 
+            ],
             "/StageOpen_hello": [
-                -386.7876226130587, 
+                -386.7876226130587,
                 -791.4163032805952
-            ], 
+            ],
             "/StageOpen_pasted": [
-                3.0, 
+                3.0,
                 -190.0
             ]
-        }, 
+        },
         "collapse": {
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false, 
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false,
             "/OpenOrFind_hello/StageOpen_hello": false
         }
-    }, 
+    },
     "nodes": {
         "/": {
             "child_order": [
-                "StageOpen_hello", 
+                "StageOpen_hello",
                 "OpenOrFind_hello"
-            ], 
+            ],
             "attrs": {
                 "USD_file": {
                     "value": "'${path::}/HelloWorld.usda'"
                 }
             }
-        }, 
+        },
         "/OpenOrFind_hello": {
             "child_order": [
                 "StageOpen_hello"
-            ], 
+            ],
             "attrs": {
                 "directory": {
-                    "comment": "Full path to your usd file on disk.", 
-                    "type": "raw", 
+                    "comment": "Full path to your usd file on disk.",
+                    "type": "raw",
                     "value": "${path}${name}.${type}"
-                }, 
+                },
                 "name": {
-                    "comment": "Name of usd file", 
-                    "type": "raw", 
+                    "comment": "Name of usd file",
+                    "type": "raw",
                     "value": "HelloWorld"
-                }, 
+                },
                 "path": {
-                    "comment": "Directory path", 
-                    "type": "raw", 
+                    "comment": "Directory path",
+                    "type": "raw",
                     "value": "./"
-                }, 
+                },
                 "stage": {
                     "comment": "Returns self.stage"
-                }, 
+                },
                 "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
-                    "type": "raw", 
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "type": "raw",
                     "value": "usda"
                 }
-            }, 
+            },
             "code": [
-                "if Usd.Stage.IsSupportedFile('${directory}'):", 
-                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')", 
-                "    if not root_layer:", 
-                "        if Sdf.Layer.GetLoadedLayers():", 
-                "            for layer in Sdf.Layer.GetLoadedLayers():", 
-                "                temp_stage = Usd.Stage.Open(layer)", 
-                "                temp_stage = None", 
-                "        root_layer = Sdf.Layer.CreateNew('${directory}')", 
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        root_layer = Sdf.Layer.CreateNew('${directory}')",
                 "    stage = Usd.Stage.Open(root_layer)"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello": {
             "child_order": [
                 "DefinePrim_hello"
-            ], 
+            ],
             "attrs": {
                 "USD_file": {
-                    "type": "raw", 
+                    "type": "raw",
                     "value": "${path::${name}.${type}}"
-                }, 
+                },
                 "directory": {
-                    "comment": "Full path to your usd file on disk.", 
-                    "type": "raw", 
+                    "comment": "Full path to your usd file on disk.",
+                    "type": "raw",
                     "value": "${path}/${name}.${type}"
-                }, 
+                },
                 "name": {
-                    "comment": "Name of usd file", 
-                    "type": "raw", 
+                    "comment": "Name of usd file",
+                    "type": "raw",
                     "value": "HelloWorld"
-                }, 
+                },
                 "path": {
-                    "comment": "Directory path", 
-                    "type": "raw", 
+                    "comment": "Directory path",
+                    "type": "raw",
                     "value": "${path::}"
-                }, 
+                },
                 "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)", 
-                    "type": "raw", 
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "type": "raw",
                     "value": "usda"
                 }
-            }, 
+            },
             "code": [
-                "", 
+                "",
                 "self.stage = Usd.Stage.Open('${USD_file}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello": {
             "child_order": [
                 "Sphere_world"
-            ], 
+            ],
             "attrs": {
                 "prim": {
                     "comment": "Returns self.prim"
-                }, 
+                },
                 "prim_name": {
-                    "comment": "Name of the prim that will be made", 
-                    "type": "raw", 
+                    "comment": "Name of the prim that will be made",
+                    "type": "raw",
                     "value": "/hello"
-                }, 
+                },
                 "type_usdgeom": {
-                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html", 
-                    "type": "raw", 
+                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html",
+                    "type": "raw",
                     "value": "Xform"
                 }
-            }, 
+            },
             "code": [
-                "prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')", 
-                "", 
+                "prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')",
+                "",
                 "self.prim = prim"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
-            "start_point": false, 
+            "start_point": false,
             "child_order": [
                 "RootLayerSave_helloWorld"
-            ], 
+            ],
             "attrs": {
                 "prim_name": {
-                    "comment": "Name of the prim that will be made", 
-                    "type": "raw", 
+                    "comment": "Name of the prim that will be made",
+                    "type": "raw",
                     "value": "/hello/world"
-                }, 
+                },
                 "sphere": {
                     "comment": "Returns self.sphere"
                 }
-            }, 
+            },
             "code": [
                 "self.sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
             "code": [
                 "self.stage.GetRootLayer().Save()"

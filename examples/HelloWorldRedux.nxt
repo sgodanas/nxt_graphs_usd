@@ -1,66 +1,66 @@
 {
-    "version": "1.17", 
-    "alias": "HelloWorldRedux", 
-    "color": "#51b848", 
-    "mute": false, 
-    "solo": false, 
+    "version": "1.17",
+    "alias": "HelloWorldRedux",
+    "color": "#51b848",
+    "mute": false,
+    "solo": false,
     "references": [
-        "examples/HelloWorld.nxt"
-    ], 
+        "./HelloWorld.nxt"
+    ],
     "meta_data": {
         "positions": {
             "/CreateNew_hello_pasted": [
-                -121.7857142857143, 
+                -121.7857142857143,
                 -436.07142857142856
-            ], 
+            ],
             "/StageOpen_hello": [
-                16.01955403574607, 
+                16.01955403574607,
                 -658.6994878529541
             ]
-        }, 
+        },
         "collapse": {
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": false, 
-            "/CreateNew_hello_pasted": false, 
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": false,
+            "/CreateNew_hello_pasted": false,
             "/CreateNew_hello_pasted/StageOpen_hello": false
         }
-    }, 
+    },
     "nodes": {
         "/": {
             "child_order": [
-                "RootLayerSave_helloWorld", 
-                "StageOpen_hello", 
+                "RootLayerSave_helloWorld",
+                "StageOpen_hello",
                 "OpenOrFind_hello"
-            ], 
+            ],
             "attrs": {
                 "USD_file": {
                     "value": "'${path::}/HelloWorldRedux.usda'"
                 }
             }
-        }, 
+        },
         "/OpenOrFind_hello": {
             "child_order": [
                 "StageOpen_hello"
-            ], 
+            ],
             "attrs": {
                 "name": {
                     "value": "HelloWorldRedux"
                 }
             }
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello": {
             "attrs": {
                 "name": {
                     "value": "HelloWorldRedux"
                 }
             }
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
             "attrs": {
                 "type_usdgeom": {
                     "value": "Sphere"
                 }
-            }, 
+            },
             "code": [
                 "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
             ]

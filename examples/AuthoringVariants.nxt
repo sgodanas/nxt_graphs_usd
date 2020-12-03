@@ -1,434 +1,471 @@
 {
-    "version": "1.17", 
-    "alias": "AuthoringVariants", 
-    "color": "#00a5e6", 
-    "mute": false, 
-    "solo": false, 
+    "version": "1.17",
+    "alias": "AuthoringVariants",
+    "color": "#00a5e6",
+    "mute": false,
+    "solo": false,
     "references": [
-        "examples/HelloWorldRedux.nxt"
-    ], 
+        "./HelloWorldRedux.nxt"
+    ],
     "comp_overrides": {
         "./pxr_usd.nxt": {
             "solo": false
         }
-    }, 
+    },
     "meta_data": {
         "positions": {
             "/AddVariant": [
-                1108.6311830296972, 
+                1108.6311830296972,
                 68.701508322205
-            ], 
+            ],
             "/AddVariantSet": [
-                1112.5611863801814, 
+                1112.5611863801814,
                 -56.9295766617028
-            ], 
+            ],
             "/AddVariantSet_color": [
-                -241.8855668803359, 
+                -241.8855668803359,
                 -506.43889072980176
-            ], 
+            ],
             "/AddVariantSet_pasted": [
-                -97.09829153161455, 
+                -97.09829153161455,
                 -291.69389051106543
-            ], 
+            ],
             "/AddVariant_pasted": [
-                262.80133540857815, 
+                262.80133540857815,
                 -277.06784294274115
-            ], 
+            ],
             "/AddVariant_red": [
-                -358.3924094322511, 
+                -358.3924094322511,
                 -164.48536009344025
-            ], 
+            ],
             "/BasisCurves": [
-                755.5496038301535, 
+                755.5496038301535,
                 266.3784812169412
-            ], 
+            ],
             "/Capsule": [
-                394.16110140556793, 
+                394.16110140556793,
                 469.3601267663327
-            ], 
+            ],
             "/Cone": [
-                397.45284270502043, 
+                397.45284270502043,
                 163.30374588177662
-            ], 
+            ],
             "/CreateNew_hello": [
-                -263.98044596425393, 
+                -263.98044596425393,
                 -838.0342745528933
-            ], 
+            ],
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": [
-                0.0, 
+                0.0,
                 0.0
-            ], 
+            ],
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": [
-                0.0, 
+                0.0,
                 0.0
-            ], 
+            ],
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_pasted": [
-                0.0, 
+                0.0,
                 0.0
-            ], 
+            ],
             "/CreateNew_hello_pasted/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red": [
-                0.0, 
+                0.0,
                 0.0
-            ], 
+            ],
             "/CreateNew_hello_pasted/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": [
-                0.0, 
+                0.0,
                 0.0
-            ], 
+            ],
             "/Cube": [
-                392.4279569482428, 
+                392.4279569482428,
                 56.106183070515584
-            ], 
+            ],
             "/Cylinder": [
-                397.27147351332223, 
+                397.27147351332223,
                 381.1114352682037
-            ], 
+            ],
             "/DefinePrim": [
-                390.4449352262843, 
+                390.4449352262843,
                 267.8045673604192
-            ], 
+            ],
             "/GetVariantEditContext": [
-                1111.3260997910697, 
+                1111.3260997910697,
                 307.201641703657
-            ], 
+            ],
             "/GetVariantEditContext_blue": [
-                -251.91521679395655, 
+                -251.91521679395655,
                 -162.45745601610957
-            ], 
+            ],
             "/GetVariantEditContext_green": [
-                -315.403190669645, 
+                -315.403190669645,
                 -67.36886060005696
-            ], 
+            ],
             "/Mesh": [
-                765.6924459541633, 
+                765.6924459541633,
                 -71.86133426166705
-            ], 
+            ],
             "/ModelApi": [
-                1446.5382264427128, 
+                1446.5382264427128,
                 -132.70247331675432
-            ], 
+            ],
             "/NurbsCurves": [
-                757.1778972075626, 
+                757.1778972075626,
                 386.7817304020136
-            ], 
+            ],
             "/NurbsPatch": [
-                765.2791593198567, 
+                765.2791593198567,
                 164.21814857506172
-            ], 
+            ],
             "/OpenOrFind": [
-                12.806008506175829, 
+                12.806008506175829,
                 -146.68700652528742
-            ], 
+            ],
             "/OpenOrFind_hello": [
-                -652.4809777331303, 
+                -652.4809777331303,
                 -791.499612912949
-            ], 
+            ],
             "/OpenOrFind_hello2": [
-                -274.74709158704616, 
+                -274.74709158704616,
                 -674.0617204614396
-            ], 
+            ],
             "/OpenOrFind_pasted": [
-                -273.92293631866187, 
+                -273.92293631866187,
                 -869.2635116241406
-            ], 
+            ],
             "/Points": [
-                768.927742628495, 
+                768.927742628495,
                 49.895871571053675
-            ], 
+            ],
             "/RootLayerSave_helloWorld": [
-                -455.7730779667104, 
+                -455.7730779667104,
                 -199.272530563115
-            ], 
+            ],
             "/RootLayerSave_pasted": [
-                -274.86070914942877, 
+                -274.86070914942877,
                 -59.90426407014991
-            ], 
+            ],
             "/SetAssetIdentifier": [
-                1464.6006552069107, 
+                1464.6006552069107,
                 286.40814382224397
-            ], 
+            ],
             "/SetAssetName": [
-                1453.5889954523786, 
+                1453.5889954523786,
                 87.29170577264568
-            ], 
+            ],
             "/SetAssetVersion": [
-                1459.7987041404285, 
+                1459.7987041404285,
                 188.71694767745393
-            ], 
+            ],
             "/SetKind": [
-                1455.0043479507199, 
+                1455.0043479507199,
                 -30.17775519451577
-            ], 
+            ],
             "/SetPayloadAssetDependencies": [
-                1465.9816740249867, 
+                1465.9816740249867,
                 389.5858448027941
-            ], 
+            ],
             "/SetVariantSelection": [
-                1114.0210165524422, 
+                1114.0210165524422,
                 196.71005448739112
-            ], 
+            ],
             "/SetVariantSelection_blue": [
-                -262.24085041343983, 
+                -262.24085041343983,
                 -237.0679887066687
-            ], 
+            ],
             "/SetVariantSelection_pasted_pasted": [
-                -311.8725288071424, 
+                -311.8725288071424,
                 -150.66234522531659
-            ], 
+            ],
             "/Sphere": [
-                392.82636486428237, 
+                392.82636486428237,
                 -67.63875707517377
-            ], 
+            ],
             "/Sphere_world": [
-                -85.00207291935354, 
+                -85.00207291935354,
                 -379.5903481061672
-            ], 
+            ],
             "/StageOpen_hello": [
-                -181.69095242006227, 
+                -181.69095242006227,
                 -795.9437151723561
-            ], 
+            ],
             "/UsdCat": [
-                -340.41369526168785, 
+                -340.41369526168785,
                 41.66750946000136
-            ], 
+            ],
             "/UsdConvert": [
-                -338.2603845710448, 
+                -338.2603845710448,
                 347.5020003694832
-            ], 
+            ],
             "/UsdDiff": [
-                -342.35072543564786, 
+                -342.35072543564786,
                 247.94718257979457
-            ], 
+            ],
             "/UsdEdit": [
-                -342.3681428952797, 
+                -342.3681428952797,
                 140.12897043845842
-            ], 
+            ],
             "/UsdView": [
-                -341.946369646064, 
-                -63.71672268356243
-            ], 
+                -354.8969533342159,
+                -65.05502411806845
+            ],
             "/Xform": [
-                751.6830586057622, 
+                751.6830586057622,
                 470.0683157556271
             ]
-        }, 
+        },
         "collapse": {
-            "/CreateNew_hello": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/RootLayerSave_helloWorld": true, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": false, 
-            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": true, 
-            "/OpenOrFind_hello/StageOpen_hello": false, 
-            "/OpenOrFind_pasted": false
+            "/CreateNew_hello": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/RootLayerSave_helloWorld": true,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": true,
+            "/OpenOrFind_hello": false,
+            "/OpenOrFind_hello/StageOpen_hello": false,
+            "/OpenOrFind_pasted": false,
+            "/UsdView": false
         }
-    }, 
+    },
     "nodes": {
         "/": {
             "child_order": [
-                "UsdView", 
-                "AddVariantSet_color", 
+                "UsdView",
+                "AddVariantSet_color",
                 "OpenOrFind_hello"
-            ], 
+            ],
             "attrs": {
                 "USD_file": {
-                    "type": "str", 
-                    "value": "'${path::}/AuthorVariants.usda'"
+                    "type": "raw",
+                    "value": "${path::}/tests/AuthorVariants.usda"
                 }
-            }, 
+            },
             "code": [
                 "from pxr import Usd, Sdf, UsdGeom"
             ]
-        }, 
+        },
         "/OpenOrFind_hello": {
-            "start_point": true, 
+            "start_point": true,
             "child_order": [
                 "StageOpen_hello"
-            ], 
+            ],
             "attrs": {
                 "name": {
                     "value": "AuthorVariants"
+                },
+                "path": {
+                    "type": "raw",
+                    "value": "${path::}/tests/"
                 }
-            }
-        }, 
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "    stage = Usd.Stage.Open(root_layer)",
+                "else:",
+                "    print('None supported file: ''${directory}')"
+            ]
+        },
         "/OpenOrFind_hello/StageOpen_hello": {
             "attrs": {
                 "name": {
                     "value": "AuthorVariants"
+                },
+                "path": {
+                    "type": "raw",
+                    "value": "${path::}/tests/"
                 }
-            }
-        }, 
+            },
+            "code": [
+                "",
+                "self.stage = Usd.Stage.Open('${directory}')"
+            ]
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": {
             "child_order": [
                 "AddVariant_red"
-            ], 
+            ],
             "attrs": {
                 "variant_set_name": {
-                    "comment": "Choose your Variant sets name", 
-                    "type": "raw", 
+                    "comment": "Choose your Variant sets name",
+                    "type": "raw",
                     "value": "shadingVariant"
-                }, 
+                },
                 "vset": {
                     "comment": "Returns self.vset"
                 }
-            }, 
+            },
             "code": [
                 "self.vset = self.prim.GetVariantSets().AddVariantSet('${variant_set_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": {
             "child_order": [
                 "AddVariant_blue"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "The name a variant that will be added to a choosen variant set", 
-                    "type": "raw", 
+                    "comment": "The name a variant that will be added to a choosen variant set",
+                    "type": "raw",
                     "value": "red"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.AddVariant('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue": {
             "child_order": [
                 "AddVariant_green"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "The name a variant that will be added to a choosen variant set", 
-                    "type": "raw", 
+                    "comment": "The name a variant that will be added to a choosen variant set",
+                    "type": "raw",
                     "value": "blue"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.AddVariant('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green": {
             "child_order": [
                 "SetVariantSelection_red"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "The name a variant that will be added to a choosen variant set", 
-                    "type": "raw", 
+                    "comment": "The name a variant that will be added to a choosen variant set",
+                    "type": "raw",
                     "value": "green"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.AddVariant('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red": {
             "child_order": [
                 "GetVariantEditContext_red"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "Name of variant you want to set as your selection", 
-                    "type": "raw", 
+                    "comment": "Name of variant you want to set as your selection",
+                    "type": "raw",
                     "value": "red"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": {
             "child_order": [
                 "SetVariantSelection_blue"
-            ], 
+            ],
             "attrs": {
                 "colorAttr": {}
-            }, 
+            },
             "code": [
-                "self.colorAttr = UsdGeom.Gprim.Get(self.stage, '${prim_name}').GetDisplayColorAttr()", 
-                "self.colorAttr.Clear()", 
-                "with self.vset.GetVariantEditContext():", 
-                "    self.colorAttr.Set([(1,0,0)])", 
-                "", 
+                "self.colorAttr = UsdGeom.Gprim.Get(self.stage, '${prim_name}').GetDisplayColorAttr()",
+                "self.colorAttr.Clear()",
+                "with self.vset.GetVariantEditContext():",
+                "    self.colorAttr.Set([(1,0,0)])",
+                "",
                 "    "
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue": {
             "child_order": [
                 "GetVariantEditContext_blue"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "Name of variant you want to set as your selection", 
-                    "type": "raw", 
+                    "comment": "Name of variant you want to set as your selection",
+                    "type": "raw",
                     "value": "blue"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": {
             "child_order": [
                 "SetVariantSelection_green"
-            ], 
+            ],
             "code": [
-                "with self.vset.GetVariantEditContext():", 
-                "    self.colorAttr.Set([(0,0,1)])", 
+                "with self.vset.GetVariantEditContext():",
+                "    self.colorAttr.Set([(0,0,1)])",
                 ""
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green": {
             "child_order": [
                 "GetVariantEditContext_green"
-            ], 
+            ],
             "attrs": {
                 "variant_name": {
-                    "comment": "Name of variant you want to set as your selection", 
-                    "type": "raw", 
+                    "comment": "Name of variant you want to set as your selection",
+                    "type": "raw",
                     "value": "green"
                 }
-            }, 
+            },
             "code": [
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": {
             "child_order": [
                 "RootLayerSave_pasted"
-            ], 
+            ],
             "code": [
-                "with self.vset.GetVariantEditContext():", 
-                "    self.colorAttr.Set([(0,1,0)])", 
+                "with self.vset.GetVariantEditContext():",
+                "    self.colorAttr.Set([(0,1,0)])",
                 ""
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green/RootLayerSave_pasted": {
             "code": [
                 "self.stage.GetRootLayer().Save()"
             ]
-        }, 
+        },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
             "enabled": false
-        }, 
+        },
         "/UsdView": {
-            "start_point": true, 
+            "start_point": true,
             "code": [
-                "import subprocess", 
-                "", 
-                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #", 
-                "# USDVIEW Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdview #", 
-                "", 
-                "# usage: usdview", 
-                "#        [-h] [--renderer {GL,Embree,Prman,HydraDisabled}]", 
-                "#        [--select PRIMPATH] [--camera CAMERA] [--mask PRIMPATH[,PRIMPATH...]]", 
-                "#        [--clearsettings] [--defaultsettings] [--norender] [--noplugins]", 
-                "#        [--unloaded] [--timing] [--memstats {none,stage,stageAndImaging}]", 
-                "#        [--numThreads NUMTHREADS] [--ff FIRSTFRAME] [--lf LASTFRAME]", 
-                "#        [--cf CURRENTFRAME] [--complexity {low,medium,high,veryhigh}]", 
-                "#        [--quitAfterStartup] [--sessionLayer SESSIONLAYER]", 
-                "#        usdFile", 
-                "", 
-                "subprocess.Popen([\"usdview\", ${USD_file}], stdout=subprocess.PIPE)", 
+                "import subprocess",
+                "from sys import platform",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDVIEW Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdview #",
+                "",
+                "# usage: usdview",
+                "#        [-h] [--renderer {GL,Embree,Prman,HydraDisabled}]",
+                "#        [--select PRIMPATH] [--camera CAMERA] [--mask PRIMPATH[,PRIMPATH...]]",
+                "#        [--clearsettings] [--defaultsettings] [--norender] [--noplugins]",
+                "#        [--unloaded] [--timing] [--memstats {none,stage,stageAndImaging}]",
+                "#        [--numThreads NUMTHREADS] [--ff FIRSTFRAME] [--lf LASTFRAME]",
+                "#        [--cf CURRENTFRAME] [--complexity {low,medium,high,veryhigh}]",
+                "#        [--quitAfterStartup] [--sessionLayer SESSIONLAYER]",
+                "#        usdFile",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    subprocess.Popen([\"usdview\", '${USD_file}'], stdout=subprocess.PIPE)",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    subprocess.Popen('usdview ${USD_file}', stdout=subprocess.PIPE, shell=True)",
+                "",
+                "",
                 ""
             ]
         }

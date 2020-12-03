@@ -8,7 +8,7 @@ A library of USD graphs/nodes for use inside NXT with some simple USD examples.
 
 ## Important Links
 
- - Please insure that you have both [NXT](https://github.com/SunriseProductions/nxt) and [USD](https://github.com/PixarAnimationStudios/USD) setup on your pc.
+ - Please insure that you have both [NXT](https://nxt-dev.github.io/) and [USD](https://github.com/PixarAnimationStudios/USD) setup on your pc.
  - How to use these nodes: [Example](Example.md) 
 
 ## Coding guidelines for Python

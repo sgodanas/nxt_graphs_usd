@@ -189,9 +189,9 @@
             "/Sphere": true,
             "/StageOpen": false,
             "/UsdCat": false,
-            "/UsdConvert": true,
-            "/UsdDiff": true,
-            "/UsdEdit": false,
+            "/UsdConvert": false,
+            "/UsdDiff": false,
+            "/UsdEdit": true,
             "/UsdView": true,
             "/capsule": false,
             "/node": false
@@ -215,7 +215,7 @@
             }
         },
         "/UsdCat": {
-            "start_point": true,
+            "start_point": false,
             "code": [
                 "import os",
                 "from sys import platform",
@@ -238,15 +238,16 @@
             ]
         },
         "/UsdConvert": {
+            "start_point": false,
             "attrs": {
                 "converted_file": {
-                    "type": "str",
-                    "value": "'./HelloWorld.abc'"
+                    "type": "raw",
+                    "value": "${path::}/examples/tests//HelloWorld.abc"
                 }
             },
             "code": [
                 "import os",
-                "",
+                "from sys import platform",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
                 "# https://graphics.pixar.com/usd/docs/Alembic-USD-Plugin.html",
@@ -254,32 +255,47 @@
                 "#               [--mask PRIMPATH[,PRIMPATH...]]",
                 "#               inputFiles [inputFiles ...]",
                 "",
-                "",
-                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  -o ${USD_file} -out ${converted_file};read -p $msg'\\\"\")"
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat ${USD_file} -out ${converted_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows..",
+                "    os.system(\"usdcat ${USD_file} -out ${converted_file}\")"
             ]
         },
         "/UsdDiff": {
-            "start_point": true,
+            "start_point": false,
             "attrs": {
                 "diff_file": {
-                    "type": "str",
-                    "value": "'./HelloWorld.usda'"
+                    "comment": "File you want to see the diff too",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/HelloWorldRedux.usda"
                 }
             },
             "code": [
                 "import os",
-                "",
+                "from sys import platform",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usddiff #",
                 "# ",
                 "# usage: usddiff [-h] [-n] [-f] files [files ...]",
                 "",
-                "",
-                "os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usddiff  ${USD_file} ${diff_file};read -p $msg'\\\"\")"
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usddiff  ${USD_file} ${diff_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows..",
+                "    os.system('usddiff  ${USD_file} ${diff_file}')"
             ]
         },
         "/UsdEdit": {
-            "start_point": true,
+            "start_point": false,
             "code": [
                 "import os",
                 "from sys import platform",

@@ -1,0 +1,150 @@
+{
+    "version": "1.17",
+    "alias": "ModelApiExample",
+    "color": "#01697f",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "../pxr_usd_tools.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/ModelApi2": [
+                1205.5199219203846,
+                -329.47692997087245
+            ],
+            "/OpenOrFind": [
+                992.4626159360528,
+                -479.50023950130435
+            ],
+            "/Sphere": [
+                517.9928345736265,
+                -50.23318702672118
+            ],
+            "/StageOpen": [
+                12.718510515003516,
+                47.02526087335261
+            ]
+        },
+        "collapse": {
+            "/OpenOrFind": false,
+            "/OpenOrFind/StageOpen/DefinePrim/ModelApi": false,
+            "/OpenOrFind/StageOpen/Sphere": false
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "ModelApi",
+                "SetKind",
+                "RootLayerSave",
+                "ModelApi2",
+                "DefinePrim"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "value": "${path::}/tests/ModelApiExample.usda"
+                }
+            }
+        },
+        "/OpenOrFind": {
+            "start_point": true,
+            "child_order": [
+                "StageOpen"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "type": "raw",
+                    "value": "ModelApiExample"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/tests/"
+                },
+                "root_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            }
+        },
+        "/OpenOrFind/StageOpen": {
+            "child_order": [
+                "DefinePrim"
+            ],
+            "attrs": {
+                "stage": {
+                    "comment": "Returns self.stage",
+                    "type": "NoneType"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "self.stage = Usd.Stage.Open(self.root_layer)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/DefinePrim": {
+            "child_order": [
+                "ModelApi"
+            ],
+            "attrs": {
+                "prim": {
+                    "comment": "Returns self.prim"
+                },
+                "prim_name": {
+                    "comment": "Name of the prim that will be made",
+                    "type": "raw",
+                    "value": "/sphereNew"
+                },
+                "type_usdgeom": {
+                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html",
+                    "type": "raw",
+                    "value": "Sphere"
+                }
+            },
+            "code": [
+                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
+            ]
+        },
+        "/OpenOrFind/StageOpen/DefinePrim/ModelApi": {
+            "child_order": [
+                "SetKind"
+            ],
+            "attrs": {
+                "model": {}
+            },
+            "code": [
+                "self.model = Usd.ModelAPI(self.prim)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/DefinePrim/ModelApi/SetKind": {
+            "child_order": [
+                "RootLayerSave"
+            ],
+            "attrs": {
+                "kind": {
+                    "value": "Kind.Tokens.component"
+                }
+            },
+            "code": [
+                "self.model.SetKind(Kind.Tokens.component)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/DefinePrim/ModelApi/SetKind/RootLayerSave": {
+            "code": [
+                "self.stage.GetRootLayer().Save()"
+            ]
+        }
+    }
+}

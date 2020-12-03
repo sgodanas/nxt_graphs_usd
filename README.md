@@ -9,7 +9,7 @@ A library of USD graphs/nodes for use inside NXT with some simple USD examples.
 ## Important Links
 
  - Please insure that you have both [NXT](https://nxt-dev.github.io/) and [USD](https://github.com/PixarAnimationStudios/USD) setup on your pc.
- - How to use these nodes: [Example](Example.md) 
+ - How to use the USD library nodes: [Example](Example.md) 
 
 ## Coding guidelines for Python
 
@@ -27,7 +27,7 @@ Dependencies
 ------------
 
 The following dependencies are not optional:
- - [Python2.7](https://python.org)
+ - [Python](https://python.org)
  - Please see NXT and USDs documentation for their dependencies.
 
 **usdview**

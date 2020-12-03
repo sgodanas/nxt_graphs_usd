@@ -5,7 +5,7 @@
     "mute": false, 
     "solo": false, 
     "references": [
-        "/home/sue.sauer/PycharmProjects/nxt_graphs_usd/pxr_usd_tools.nxt"
+        "./pxr_usd_tools.nxt"
     ], 
     "meta_data": {
         "positions": {

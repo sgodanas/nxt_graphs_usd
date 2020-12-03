@@ -5,7 +5,7 @@
     "mute": false, 
     "solo": false, 
     "references": [
-        "/home/sue.sauer/Documents/nxt_graphs_usd/pxr_usd_model_api.nxt", 
+        "./pxr_usd_model_api.nxt",
         "./pxr_usd_variants.nxt", 
         "./pxr_usd_geom.nxt", 
         "./pxr_usd.nxt"
@@ -185,7 +185,7 @@
                 "USD_file": {
                     "comment": "USD file you want to inspect", 
                     "type": "str", 
-                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.usda'"
+                    "value": "'./HelloWorld.usda'"
                 }
             }
         }, 
@@ -209,7 +209,7 @@
             "attrs": {
                 "converted_file": {
                     "type": "str", 
-                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.abc'"
+                    "value": "'./HelloWorld.abc'"
                 }
             }, 
             "code": [
@@ -231,7 +231,7 @@
             "attrs": {
                 "diff_file": {
                     "type": "str", 
-                    "value": "'/home/sue.sauer/Documents/USD/share/usd/tutorials/authoringProperties/HelloWorld.usda'"
+                    "value": "'./HelloWorld.usda'"
                 }
             }, 
             "code": [

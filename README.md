@@ -29,7 +29,7 @@ Dependencies
 The following dependencies are required:
 
  - [Python](https://python.org) It is python 2.7 and 3.7 compatible.
- - Please see NXT and USDs documentation for their dependencies.
+ - Please see [NXT](https://nxt-dev.github.io/) and [USDs](https://github.com/PixarAnimationStudios/USD/blob/release/README.md) documentation for their dependencies.
 
 **usdview**
 
@@ -38,7 +38,7 @@ The following dependencies are required:
 
 ### Setup up NXT env with USD
 
-Making a nxt.sh:
+Making a nxt.sh for linux:
 ```
 #!/usr/bin/bash
 
@@ -54,3 +54,4 @@ nxt ui
 
 This can now be run in terminal: ``` ./nxt.sh ```
 
+For windows I add my usds paths to my windows path and pythonpath as instructed, then it to work as expected.

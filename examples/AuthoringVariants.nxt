@@ -8,6 +8,9 @@
         "./HelloWorldRedux.nxt"
     ],
     "comp_overrides": {
+        "./HelloWorld.nxt": {
+            "solo": false
+        },
         "./pxr_usd.nxt": {
             "solo": false
         }
@@ -219,6 +222,7 @@
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/RootLayerSave_helloWorld": true,
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": false,
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_pasted/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": true,
+            "/OpenOrFind": false,
             "/OpenOrFind_hello": false,
             "/OpenOrFind_hello/StageOpen_hello": false,
             "/OpenOrFind_pasted": false,

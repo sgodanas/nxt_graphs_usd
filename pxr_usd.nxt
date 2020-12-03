@@ -181,7 +181,7 @@
                     "type": "raw",
                     "value": "./"
                 },
-                "stage": {
+                "root_layer": {
                     "comment": "Returns self.stage"
                 },
                 "type": {
@@ -192,14 +192,15 @@
             },
             "code": [
                 "if Usd.Stage.IsSupportedFile('${directory}'):",
-                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')",
-                "    if not root_layer:",
+                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.root_layer:",
                 "        if Sdf.Layer.GetLoadedLayers():",
                 "            for layer in Sdf.Layer.GetLoadedLayers():",
                 "                temp_stage = Usd.Stage.Open(layer)",
                 "                temp_stage = None",
-                "        root_layer = Sdf.Layer.CreateNew('${directory}')",
-                "    stage = Usd.Stage.Open(root_layer)"
+                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
             ]
         },
         "/RootLayerSave": {
@@ -270,6 +271,7 @@
                     "type": "raw",
                     "value": "./"
                 },
+                "root_layer": {},
                 "stage": {
                     "comment": "Returns self.stage"
                 },
@@ -280,7 +282,7 @@
                 }
             },
             "code": [
-                "self.stage = Usd.Stage.Open('${directory}')"
+                "self.stage = Usd.Stage.Open(self.root_layer)"
             ]
         }
     }

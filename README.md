@@ -26,13 +26,12 @@ These graphs have been tested on Centos 7
 Dependencies
 ------------
 
-The following dependencies are not optional:
+The following dependencies are required:
+
  - [Python](https://python.org)
  - Please see NXT and USDs documentation for their dependencies.
 
 **usdview**
-
-The following dependencies are required:
 
  - [PySide](http://wiki.qt.io/PySide) or [PySide2](http://wiki.qt.io/PySide2)
  - [PyOpenGL](https://pypi.python.org/pypi/PyOpenGL/)

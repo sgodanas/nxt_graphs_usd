@@ -78,3 +78,9 @@ These single nodes when combined(parented or strung together)
  - [HelloWorldRedux.nxt](examples/HelloWorldRedux.nxt)
     - Please see [helloWorldRedux](https://graphics.pixar.com/usd/docs/Hello-World-Redux---Using-Generic-Prims.html) from pixar.
 
+![Alt text](images/helloworldRedux.png?raw=true "HelloWorldRedux")
+
+ - [AuthorVariants.nxt](examples/AuthorVariants.nxt)
+    - Please see [AuthorVariants](https://graphics.pixar.com/usd/docs/Authoring-Variants.html) from pixar.
+
+![Alt text](images/authorvariants.png?raw=true "HelloWorldRedux")

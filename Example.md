@@ -49,7 +49,7 @@ These single nodes when combined(parented or strung together)
  - AddVariantSet: Add a variant set to a prim of your choice.
  - AddVariant: Add a variant to a variant set.
  - SetVariantSelection: Set a variant selection of your choice.
- - GetVariantEditContext: Add context to a selected variant.
+ - GetVariantEditContext: Edit context to a selected variant.
 
 ### pxr_usd_model_api
 

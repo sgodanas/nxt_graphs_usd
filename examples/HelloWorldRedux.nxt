@@ -5,7 +5,7 @@
     "mute": false, 
     "solo": false, 
     "references": [
-        "./examples/HelloWorld.nxt"
+        "examples/HelloWorld.nxt"
     ], 
     "meta_data": {
         "positions": {

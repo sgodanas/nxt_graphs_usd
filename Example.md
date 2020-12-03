@@ -23,15 +23,16 @@ I will be adding to these as I go along.
 
 ![Alt text](images/coreusd.png?raw=true "CoreNodes")
 
+ - OpenOrFind: A more robust method of opening or creating usd files.
  - CreateNew: Creates a new empty layer with the given identifier.
  - StageOpen: Attempt to find a matching existing stage in a cache if UsdStageCacheContext objects exist on the stack. Failing that, create a new stage and recursively compose prims defined within and referenced by the layer at filePath, which must already exist.
  - RootLayerSave: Save out the Root layer to a stage.
  - GetPrimAtPath: Returns the prim at the given path.
  - GetPropertyNames: Return all of this prim's property names (attributes and relationships), including all builtin properties
  - GetAttribute: Return a UsdAttribute with the name given.
- - SetAttribute: 
- - SetDefaultPrim: 
- - GetDefaultPrim: 
+ - SetAttribute: Set a UsdAttribute with the name given.
+ - SetDefaultPrim: Set the DefaultPrim of a stage.
+ - GetDefaultPrim: Get the DefaultPrim of a stage.
 
 ### pxr_usd_geom
 
@@ -69,9 +70,12 @@ I will be adding to these as I go along.
 
 ![Alt text](images/modelapi.png?raw=true "ModelApiNodes")
 
+ - ModelApi:
  - SetKind: Set a kind for a usd prim
  - SetAssetName: Give a prim a asset name
  - SetAssetVersion: Give a prim an asset version
+ - SetAssetIdentifier: Sets the model's asset identifier to the given asset path
+ - SetPayloadAssetDependencies: Returns the list of asset dependencies referenced inside the payload of the model.
 
 ### pxr_usd_tools
 

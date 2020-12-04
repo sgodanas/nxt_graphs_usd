@@ -1,0 +1,311 @@
+{
+    "version": "1.17",
+    "alias": "AddLayersExample",
+    "color": "#51b848",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "E:/Sandbox/nxt_graphs_usd/pxr_usd_tools.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/AddPayload": [
+                2123.721105083459,
+                282.58161971215026
+            ],
+            "/AddPayload2": [
+                267.2836277638088,
+                -181.68835387427546
+            ],
+            "/AddReference": [
+                325.01443445704183,
+                -219.68106437796496
+            ],
+            "/AddSublayer": [
+                2277.2348166631386,
+                515.299135277465
+            ],
+            "/OpenOrFind": [
+                1656.987120030605,
+                -761.2417824008403
+            ],
+            "/OpenOrFind_Payload": [
+                2128.6819252261193,
+                92.01810892893583
+            ],
+            "/OpenOrFind_Sublayer": [
+                2147.8331737147473,
+                300.4071437989132
+            ],
+            "/OpenOrFind_Sublayer2": [
+                1857.8181365339465,
+                -328.8969064152721
+            ],
+            "/OpenOrFind_ref": [
+                2096.020065677537,
+                -121.08703934427201
+            ],
+            "/RootLayerSave2": [
+                1797.7421851145384,
+                -226.66120734087662
+            ],
+            "/Sphere2": [
+                954.373268272546,
+                -217.89700280495617
+            ],
+            "/StageOpen": [
+                17.92087296275983,
+                43.469164609315044
+            ],
+            "/StageOpen2": [
+                320,
+                0
+            ],
+            "/node": [
+                2096.2199581896048,
+                -92.7637567704595
+            ]
+        },
+        "collapse": {
+            "/OpenOrFind/StageOpen/Sphere/OpenOrFind_Payload": false,
+            "/OpenOrFind/StageOpen3": false,
+            "/OpenOrFind2": false,
+            "/OpenOrFind_Payload/StageOpen2": false,
+            "/node": true
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "AddPayload",
+                "AddReference",
+                "OpenOrFind",
+                "RootLayerSave",
+                "OpenOrFind_ref",
+                "OpenOrFind_Payload",
+                "OpenOrFind_Sublayer",
+                "OpenOrFind_Sublayer2",
+                "RootLayerSave2"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "type": "raw",
+                    "value": "${path::}/tests/AddLayersExample.usda"
+                }
+            }
+        },
+        "/OpenOrFind": {
+            "start_point": true,
+            "child_order": [
+                "StageOpen"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "type": "raw",
+                    "value": "AddLayersExample"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/tests/"
+                },
+                "root_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            }
+        },
+        "/OpenOrFind/StageOpen": {
+            "child_order": [
+                "Sphere"
+            ],
+            "attrs": {
+                "stage": {
+                    "comment": "Returns self.stage",
+                    "type": "NoneType"
+                }
+            },
+            "code": [
+                "self.stage = Usd.Stage.Open(self.root_layer)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere": {
+            "start_point": false,
+            "child_order": [
+                "OpenOrFind_ref",
+                "OpenOrFind_Payload",
+                "OpenOrFind_Sublayer2",
+                "RootLayerSave2"
+            ],
+            "attrs": {
+                "prim": {
+                    "comment": "Returns self.sphere"
+                },
+                "prim_name": {
+                    "comment": "Name of the prim that will be made",
+                    "value": "/hello/world"
+                },
+                "type_usdgeom": {
+                    "type": "raw",
+                    "value": "Sphere"
+                }
+            },
+            "code": [
+                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_Payload": {
+            "child_order": [
+                "StageOpen_Payload"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "type": "raw",
+                    "value": "HelloWorldRedux"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/tests/"
+                },
+                "root_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_Payload/StageOpen_Payload": {
+            "child_order": [
+                "AddPayload"
+            ],
+            "attrs": {
+                "pay_stage": {
+                    "comment": "Returns self.stage"
+                }
+            },
+            "code": [
+                "self.pay_stage = Usd.Stage.Open(self.root_layer)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_Payload/StageOpen_Payload/AddPayload": {
+            "attrs": {
+                "payload": {},
+                "position": {
+                    "value": "Back"
+                }
+            },
+            "code": [
+                "self.payload = self.prim.GetPayloads().AddPayload(assetPath=self.pay_stage.GetRootLayer().identifier,",
+                "                                                  primPath=self.prim.GetPath(),",
+                "                                                  position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_Sublayer2": {
+            "instance": "/OpenOrFind_Sublayer",
+            "attrs": {
+                "name": {
+                    "value": "AuthorVariants"
+                }
+            }
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_ref": {
+            "child_order": [
+                "StageOpen_ref"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "value": "HelloWorld"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/tests/"
+                },
+                "root_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_ref/StageOpen_ref": {
+            "child_order": [
+                "AddReference"
+            ],
+            "attrs": {
+                "path": {
+                    "value": "${path::}/tests/"
+                },
+                "ref_stage": {
+                    "comment": "Returns self.stage"
+                }
+            },
+            "code": [
+                "self.ref_stage = Usd.Stage.Open(self.root_layer)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/OpenOrFind_ref/StageOpen_ref/AddReference": {
+            "attrs": {
+                "position": {
+                    "value": "Front"
+                },
+                "reference": {}
+            },
+            "code": [
+                "self.reference = self.prim.GetReferences().AddReference(assetPath=self.ref_stage.GetRootLayer().identifier,",
+                "                                                        primPath=self.prim.GetPath(),",
+                "                                                        position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/OpenOrFind/StageOpen/Sphere/RootLayerSave2": {
+            "instance": "/RootLayerSave"
+        }
+    }
+}

@@ -99,8 +99,8 @@
                 74.18786060898391
             ],
             "/Purpose": [
-                517.2776047269329,
-                611.3280783136481
+                515.3132762384986,
+                613.2924068020824
             ],
             "/RootLayerSave": [
                 16.44428156008675,
@@ -151,8 +151,8 @@
                 36.41388484663949
             ],
             "/UsdConvert": [
-                -511.29260807534945,
-                342.2483757561213
+                -515.6105809748486,
+                342.24837575612133
             ],
             "/UsdDiff": [
                 -515.3829489399525,
@@ -188,9 +188,9 @@
             "/SetKind": false,
             "/Sphere": true,
             "/StageOpen": false,
-            "/UsdCat": false,
+            "/UsdCat": true,
             "/UsdConvert": false,
-            "/UsdDiff": false,
+            "/UsdDiff": true,
             "/UsdEdit": true,
             "/UsdView": true,
             "/capsule": false,
@@ -215,10 +215,11 @@
             }
         },
         "/UsdCat": {
-            "start_point": false,
+            "start_point": true,
             "code": [
                 "import os",
                 "from sys import platform",
+                "import subprocess",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
                 "",
@@ -234,7 +235,8 @@
                 "    pass",
                 "elif platform == \"win32\":",
                 "    # Windows...",
-                "    os.system(\"usdcat  ${USD_file}\")"
+                "    cmd = 'start powershell -NoExit -Command \"usdcat  ${USD_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)"
             ]
         },
         "/UsdConvert": {
@@ -242,7 +244,7 @@
             "attrs": {
                 "converted_file": {
                     "type": "raw",
-                    "value": "${path::}/examples/tests//HelloWorld.abc"
+                    "value": "${path::}/examples/tests//HelloWorld.usdc"
                 }
             },
             "code": [
@@ -250,20 +252,22 @@
                 "from sys import platform",
                 "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
                 "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
-                "# https://graphics.pixar.com/usd/docs/Alembic-USD-Plugin.html",
                 "# usage: usdcat [-h] [-o file] [--usdFormat usda|usdb|usdc] [-f]",
                 "#               [--mask PRIMPATH[,PRIMPATH...]]",
                 "#               inputFiles [inputFiles ...]",
+                "# *** To convert your abc to usd and vice versa you need to complie your usd with the alembic flag turned on.***",
+                "# https://graphics.pixar.com/usd/docs/Alembic-USD-Plugin.html",
                 "",
                 "if platform == \"linux\" or platform == \"linux2\":",
                 "    # linux",
-                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat ${USD_file} -out ${converted_file};read -p $msg'\\\"\")",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat ${USD_file} --out ${converted_file};read -p $msg'\\\"\")",
                 "elif platform == \"darwin\":",
                 "    # OS X",
                 "    pass",
                 "elif platform == \"win32\":",
                 "    # Windows..",
-                "    os.system(\"usdcat ${USD_file} -out ${converted_file}\")"
+                "    cmd = 'start powershell -NoExit -Command \"usdcat ${USD_file} --out ${converted_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)    "
             ]
         },
         "/UsdDiff": {
@@ -291,7 +295,8 @@
                 "    pass",
                 "elif platform == \"win32\":",
                 "    # Windows..",
-                "    os.system('usddiff  ${USD_file} ${diff_file}')"
+                "    cmd = 'start powershell -NoExit -Command \"usddiff  ${USD_file} ${diff_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)"
             ]
         },
         "/UsdEdit": {
@@ -312,7 +317,8 @@
                 "    pass",
                 "elif platform == \"win32\":",
                 "    # Windows...",
-                "    os.system(\"usdedit  ${USD_file}\")",
+                "    cmd = 'start powershell -NoExit -Command \"usdedit  ${USD_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)",
                 ""
             ]
         },

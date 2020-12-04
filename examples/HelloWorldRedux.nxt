@@ -16,6 +16,14 @@
             "/StageOpen_hello": [
                 16.01955403574607,
                 -658.6994878529541
+            ],
+            "/UsdView2": [
+                24.38049653659027,
+                -444.3693367863632
+            ],
+            "/UsdView3": [
+                32.55197498359746,
+                -390.4954302109619
             ]
         },
         "collapse": {
@@ -30,40 +38,36 @@
             "child_order": [
                 "RootLayerSave_helloWorld",
                 "StageOpen_hello",
-                "OpenOrFind_hello"
+                "OpenOrFind_hello",
+                "UsdView2"
             ],
             "attrs": {
                 "USD_file": {
-                    "value": "'${path::}/HelloWorldRedux.usda'"
+                    "type": "raw",
+                    "value": "${path::}/tests/HelloWorldRedux.usda"
                 }
             }
         },
         "/OpenOrFind_hello": {
-            "child_order": [
-                "StageOpen_hello"
-            ],
             "attrs": {
                 "name": {
                     "value": "HelloWorldRedux"
                 }
             }
         },
-        "/OpenOrFind_hello/StageOpen_hello": {
-            "attrs": {
-                "name": {
-                    "value": "HelloWorldRedux"
-                }
-            }
-        },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
             "attrs": {
                 "type_usdgeom": {
+                    "type": "raw",
                     "value": "Sphere"
                 }
             },
             "code": [
                 "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
             ]
+        },
+        "/UsdView2": {
+            "instance": "/UsdView"
         }
     }
 }

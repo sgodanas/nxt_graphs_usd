@@ -1,7 +1,7 @@
 {
     "version": "1.17",
     "alias": "HelloWorld",
-    "color": "#01697f",
+    "color": "#017f36",
     "mute": false,
     "solo": false,
     "references": [
@@ -9,21 +9,49 @@
     ],
     "meta_data": {
         "positions": {
+            "/DefinePrim2": [
+                518.98825732505,
+                -320.73765160945567
+            ],
             "/DefinePrim_pasted": [
                 134.0,
                 -163.0
             ],
+            "/OpenOrFind_Payload": [
+                2078.2675845237964,
+                -26.934643651329722
+            ],
+            "/OpenOrFind_Sublayer": [
+                2129.1541878757425,
+                441.84850176063316
+            ],
             "/OpenOrFind_hello": [
-                -67.522590305291,
-                -570.449469820562
+                623.9792716009927,
+                -442.10771843662417
+            ],
+            "/OpenOrFind_ref": [
+                2113.2021659782686,
+                212.7184774465392
+            ],
+            "/RootLayerSave2": [
+                663.4952571546337,
+                -286.3396926894462
             ],
             "/RootLayerSave_pasted": [
                 166.0,
                 -137.0
             ],
+            "/Sphere2": [
+                690.222348322181,
+                -305.98285409276156
+            ],
             "/Sphere_pasted": [
                 88.0,
                 -135.0
+            ],
+            "/StageOpen2": [
+                534.8865393477629,
+                -382.56150179296657
             ],
             "/StageOpen_hello": [
                 -386.7876226130587,
@@ -32,10 +60,15 @@
             "/StageOpen_pasted": [
                 3.0,
                 -190.0
+            ],
+            "/UsdView3": [
+                320,
+                0
             ]
         },
         "collapse": {
             "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false,
+            "/OpenOrFind_hello": false,
             "/OpenOrFind_hello/StageOpen_hello": false
         }
     },
@@ -43,7 +76,12 @@
         "/": {
             "child_order": [
                 "StageOpen_hello",
-                "OpenOrFind_hello"
+                "OpenOrFind_hello",
+                "StageOpen2",
+                "DefinePrim2",
+                "Sphere2",
+                "RootLayerSave2",
+                "UsdView3"
             ],
             "attrs": {
                 "USD_file": {
@@ -53,110 +91,36 @@
             }
         },
         "/OpenOrFind_hello": {
+            "start_point": true,
+            "instance": "/OpenOrFind",
             "child_order": [
                 "StageOpen_hello"
             ],
             "attrs": {
-                "directory": {
-                    "comment": "Full path to your usd file on disk.",
-                    "type": "raw",
-                    "value": "${path}${name}.${type}"
-                },
-                "name": {
-                    "comment": "Name of usd file",
-                    "type": "raw",
-                    "value": "HelloWorld"
-                },
                 "path": {
-                    "comment": "Directory path",
-                    "type": "raw",
                     "value": "${path::}/tests/"
-                },
-                "stage": {
-                    "comment": "Returns self.stage"
-                },
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)",
-                    "type": "raw",
-                    "value": "usda"
                 }
-            },
-            "code": [
-                "if Usd.Stage.IsSupportedFile('${directory}'):",
-                "    root_layer = Sdf.Layer.FindOrOpen('${directory}')",
-                "    if not root_layer:",
-                "        if Sdf.Layer.GetLoadedLayers():",
-                "            for layer in Sdf.Layer.GetLoadedLayers():",
-                "                temp_stage = Usd.Stage.Open(layer)",
-                "                temp_stage = None",
-                "        root_layer = Sdf.Layer.CreateNew('${directory}')",
-                "    stage = Usd.Stage.Open(root_layer)"
-            ]
+            }
         },
         "/OpenOrFind_hello/StageOpen_hello": {
+            "instance": "/StageOpen",
             "child_order": [
-                "DefinePrim_hello"
-            ],
-            "attrs": {
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)",
-                    "type": "raw",
-                    "value": "usda"
-                }
-            },
-            "code": [
-                "",
-                "self.stage = Usd.Stage.Open('${USD_file}')"
+                "DefinePrim_hello",
+                "Sphere_world",
+                "RootLayerSave_helloWorld"
             ]
         },
         "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello": {
-            "child_order": [
-                "Sphere_world"
-            ],
-            "attrs": {
-                "prim": {
-                    "comment": "Returns self.prim"
-                },
-                "prim_name": {
-                    "comment": "Name of the prim that will be made",
-                    "type": "raw",
-                    "value": "/hello"
-                },
-                "type_usdgeom": {
-                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html",
-                    "type": "raw",
-                    "value": "Xform"
-                }
-            },
-            "code": [
-                "prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')",
-                "",
-                "self.prim = prim"
-            ]
+            "instance": "/DefinePrim"
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": {
-            "start_point": false,
-            "child_order": [
-                "RootLayerSave_helloWorld"
-            ],
-            "attrs": {
-                "prim_name": {
-                    "comment": "Name of the prim that will be made",
-                    "type": "raw",
-                    "value": "/hello/world"
-                },
-                "sphere": {
-                    "comment": "Returns self.sphere"
-                }
-            },
-            "code": [
-                "self.sphere = UsdGeom.Sphere.Define(self.stage, '${prim_name}')"
-            ]
+        "/OpenOrFind_hello/StageOpen_hello/RootLayerSave_helloWorld": {
+            "instance": "/RootLayerSave"
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
-            "code": [
-                "self.stage.GetRootLayer().Save()"
-            ]
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
+            "instance": "/Sphere"
+        },
+        "/UsdView3": {
+            "instance": "/UsdView"
         }
     }
 }

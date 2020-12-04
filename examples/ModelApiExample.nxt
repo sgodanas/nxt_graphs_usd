@@ -9,13 +9,45 @@
     ],
     "meta_data": {
         "positions": {
+            "/DefinePrim2": [
+                550.4650397687586,
+                -272.3677742721693
+            ],
             "/ModelApi2": [
-                1205.5199219203846,
-                -329.47692997087245
+                660.6343827287253,
+                -253.98177659597943
             ],
             "/OpenOrFind": [
-                992.4626159360528,
-                -479.50023950130435
+                18.646675065047717,
+                -145.54317967650914
+            ],
+            "/OpenOrFind2": [
+                504.58150369855366,
+                -427.8628533932383
+            ],
+            "/OpenOrFind22": [
+                861.2457589009898,
+                -566.3722619357744
+            ],
+            "/OpenOrFind_Payload": [
+                2084.3916484529755,
+                173.21814253071813
+            ],
+            "/OpenOrFind_Sublayer": [
+                2119.905873945835,
+                374.77265785608586
+            ],
+            "/OpenOrFind_ref": [
+                2052.63498898901,
+                -34.64362850614362
+            ],
+            "/RootLayerSave2": [
+                666.3387862672446,
+                -161.2852190950404
+            ],
+            "/SetKind2": [
+                635.2362050691274,
+                -173.30521226549183
             ],
             "/Sphere": [
                 517.9928345736265,
@@ -24,12 +56,27 @@
             "/StageOpen": [
                 12.718510515003516,
                 47.02526087335261
+            ],
+            "/StageOpen2": [
+                1028.0422032652675,
+                -428.10252940341195
+            ],
+            "/StageOpen3": [
+                581.6207534652629,
+                -341.3083311370056
+            ],
+            "/UsdView2": [
+                28.722861447313676,
+                -411.45441949400447
             ]
         },
         "collapse": {
             "/OpenOrFind": false,
             "/OpenOrFind/StageOpen/DefinePrim/ModelApi": false,
-            "/OpenOrFind/StageOpen/Sphere": false
+            "/OpenOrFind/StageOpen/Sphere": false,
+            "/OpenOrFind2/StageOpen3": false,
+            "/OpenOrFind2/StageOpen3/DefinePrim2": false,
+            "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2": false
         }
     },
     "nodes": {
@@ -39,7 +86,14 @@
                 "SetKind",
                 "RootLayerSave",
                 "ModelApi2",
-                "DefinePrim"
+                "DefinePrim",
+                "StageOpen2",
+                "OpenOrFind2",
+                "StageOpen3",
+                "DefinePrim2",
+                "SetKind2",
+                "RootLayerSave2",
+                "UsdView2"
             ],
             "attrs": {
                 "USD_file": {
@@ -47,104 +101,57 @@
                 }
             }
         },
-        "/OpenOrFind": {
+        "/OpenOrFind2": {
             "start_point": true,
+            "instance": "/OpenOrFind",
             "child_order": [
-                "StageOpen"
+                "StageOpen3"
             ],
             "attrs": {
-                "directory": {
-                    "comment": "Full path to your usd file on disk.",
-                    "value": "${path}${name}.${type}"
-                },
                 "name": {
-                    "comment": "Name of usd file",
-                    "type": "raw",
                     "value": "ModelApiExample"
                 },
                 "path": {
-                    "comment": "Directory path",
                     "type": "raw",
                     "value": "${path::}/tests/"
-                },
-                "root_layer": {
-                    "comment": "Returns self.stage"
-                },
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)",
-                    "value": "usda"
                 }
             }
         },
-        "/OpenOrFind/StageOpen": {
+        "/OpenOrFind2/StageOpen3": {
+            "instance": "/StageOpen",
             "child_order": [
-                "DefinePrim"
-            ],
-            "attrs": {
-                "stage": {
-                    "comment": "Returns self.stage",
-                    "type": "NoneType"
-                },
-                "type": {
-                    "comment": "type of usd file (usd, usdc, usda, usdz)",
-                    "value": "usda"
-                }
-            },
-            "code": [
-                "self.stage = Usd.Stage.Open(self.root_layer)"
+                "DefinePrim2",
+                "RootLayerSave2"
             ]
         },
-        "/OpenOrFind/StageOpen/DefinePrim": {
+        "/OpenOrFind2/StageOpen3/DefinePrim2": {
+            "instance": "/DefinePrim",
             "child_order": [
-                "ModelApi"
+                "ModelApi2"
             ],
             "attrs": {
-                "prim": {
-                    "comment": "Returns self.prim"
-                },
                 "prim_name": {
-                    "comment": "Name of the prim that will be made",
-                    "type": "raw",
-                    "value": "/sphereNew"
+                    "value": "/SphereNew"
                 },
                 "type_usdgeom": {
-                    "comment": "Xfrom, Scope, Sphere, Mesh ect. All USDGEOMs https://graphics.pixar.com/usd/docs/api/usd_geom_page_front.html",
-                    "type": "raw",
                     "value": "Sphere"
                 }
-            },
-            "code": [
-                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
-            ]
+            }
         },
-        "/OpenOrFind/StageOpen/DefinePrim/ModelApi": {
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2": {
+            "instance": "/ModelApi",
             "child_order": [
-                "SetKind"
-            ],
-            "attrs": {
-                "model": {}
-            },
-            "code": [
-                "self.model = Usd.ModelAPI(self.prim)"
+                "SetKind2"
             ]
         },
-        "/OpenOrFind/StageOpen/DefinePrim/ModelApi/SetKind": {
-            "child_order": [
-                "RootLayerSave"
-            ],
-            "attrs": {
-                "kind": {
-                    "value": "Kind.Tokens.component"
-                }
-            },
-            "code": [
-                "self.model.SetKind(Kind.Tokens.component)"
-            ]
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2/SetKind2": {
+            "instance": "/SetKind"
         },
-        "/OpenOrFind/StageOpen/DefinePrim/ModelApi/SetKind/RootLayerSave": {
-            "code": [
-                "self.stage.GetRootLayer().Save()"
-            ]
+        "/OpenOrFind2/StageOpen3/RootLayerSave2": {
+            "instance": "/RootLayerSave"
+        },
+        "/UsdView2": {
+            "instance": "/UsdView"
         }
     }
 }

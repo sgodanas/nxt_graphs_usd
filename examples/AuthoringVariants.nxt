@@ -26,8 +26,8 @@
                 -56.9295766617028
             ],
             "/AddVariantSet_color": [
-                -241.8855668803359,
-                -506.43889072980176
+                843.5546860761848,
+                -841.573481910267
             ],
             "/AddVariantSet_pasted": [
                 -97.09829153161455,
@@ -122,8 +122,8 @@
                 -146.68700652528742
             ],
             "/OpenOrFind_hello": [
-                -403.412957631264,
-                -821.138593953661
+                514.3051475732893,
+                -973.2057691834968
             ],
             "/OpenOrFind_hello2": [
                 -274.74709158704616,
@@ -232,7 +232,6 @@
     "nodes": {
         "/": {
             "child_order": [
-                "UsdView",
                 "AddVariantSet_color",
                 "OpenOrFind_hello"
             ],
@@ -275,6 +274,9 @@
             ]
         },
         "/OpenOrFind_hello/StageOpen_hello": {
+            "child_order": [
+                "Sphere_world"
+            ],
             "attrs": {
                 "name": {
                     "value": "AuthorVariants"
@@ -289,9 +291,21 @@
                 "self.stage = Usd.Stage.Open('${directory}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
+            "attrs": {
+                "colorAttr": {}
+            },
+            "code": [
+                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')",
+                "self.colorAttr = UsdGeom.Gprim.Get(self.stage, '${prim_name}').GetDisplayColorAttr()",
+                "self.colorAttr.Clear()"
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color": {
             "child_order": [
-                "AddVariant_red"
+                "AddVariant_red",
+                "AddVariant_blue",
+                "AddVariant_green"
             ],
             "attrs": {
                 "variant_set_name": {
@@ -307,25 +321,7 @@
                 "self.vset = self.prim.GetVariantSets().AddVariantSet('${variant_set_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red": {
-            "child_order": [
-                "AddVariant_blue"
-            ],
-            "attrs": {
-                "variant_name": {
-                    "comment": "The name a variant that will be added to a choosen variant set",
-                    "type": "raw",
-                    "value": "red"
-                }
-            },
-            "code": [
-                "self.vset.AddVariant('${variant_name}')"
-            ]
-        },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue": {
-            "child_order": [
-                "AddVariant_green"
-            ],
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_blue": {
             "attrs": {
                 "variant_name": {
                     "comment": "The name a variant that will be added to a choosen variant set",
@@ -337,9 +333,11 @@
                 "self.vset.AddVariant('${variant_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green": {
             "child_order": [
-                "SetVariantSelection_red"
+                "SetVariantSelection_green",
+                "SetVariantSelection_red",
+                "SetVariantSelection_blue"
             ],
             "attrs": {
                 "variant_name": {
@@ -352,38 +350,7 @@
                 "self.vset.AddVariant('${variant_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red": {
-            "child_order": [
-                "GetVariantEditContext_red"
-            ],
-            "attrs": {
-                "variant_name": {
-                    "comment": "Name of variant you want to set as your selection",
-                    "type": "raw",
-                    "value": "red"
-                }
-            },
-            "code": [
-                "self.vset.SetVariantSelection('${variant_name}')"
-            ]
-        },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": {
-            "child_order": [
-                "SetVariantSelection_blue"
-            ],
-            "attrs": {
-                "colorAttr": {}
-            },
-            "code": [
-                "self.colorAttr = UsdGeom.Gprim.Get(self.stage, '${prim_name}').GetDisplayColorAttr()",
-                "self.colorAttr.Clear()",
-                "with self.vset.GetVariantEditContext():",
-                "    self.colorAttr.Set([(1,0,0)])",
-                "",
-                "    "
-            ]
-        },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_blue": {
             "child_order": [
                 "GetVariantEditContext_blue"
             ],
@@ -398,17 +365,14 @@
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue": {
-            "child_order": [
-                "SetVariantSelection_green"
-            ],
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_blue/GetVariantEditContext_blue": {
             "code": [
                 "with self.vset.GetVariantEditContext():",
                 "    self.colorAttr.Set([(0,0,1)])",
                 ""
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_green": {
             "child_order": [
                 "GetVariantEditContext_green"
             ],
@@ -423,54 +387,51 @@
                 "self.vset.SetVariantSelection('${variant_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green": {
-            "child_order": [
-                "RootLayerSave_pasted"
-            ],
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_green/GetVariantEditContext_green": {
             "code": [
                 "with self.vset.GetVariantEditContext():",
                 "    self.colorAttr.Set([(0,1,0)])",
                 ""
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/AddVariantSet_color/AddVariant_red/AddVariant_blue/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red/SetVariantSelection_blue/GetVariantEditContext_blue/SetVariantSelection_green/GetVariantEditContext_green/RootLayerSave_pasted": {
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_red": {
+            "child_order": [
+                "GetVariantEditContext_red"
+            ],
+            "attrs": {
+                "variant_name": {
+                    "comment": "Name of variant you want to set as your selection",
+                    "type": "raw",
+                    "value": "red"
+                }
+            },
             "code": [
-                "self.stage.GetRootLayer().Save()"
+                "self.vset.SetVariantSelection('${variant_name}')"
             ]
         },
-        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello/Sphere_world/RootLayerSave_helloWorld": {
-            "enabled": false
-        },
-        "/UsdView": {
-            "start_point": true,
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_green/SetVariantSelection_red/GetVariantEditContext_red": {
+            "attrs": {
+                "colorAttr": {}
+            },
             "code": [
-                "import subprocess",
-                "from sys import platform",
-                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
-                "# USDVIEW Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdview #",
+                "self.colorAttr = UsdGeom.Gprim.Get(self.stage, '${prim_name}').GetDisplayColorAttr()",
+                "self.colorAttr.Clear()",
+                "with self.vset.GetVariantEditContext():",
+                "    self.colorAttr.Set([(1,0,0)])",
                 "",
-                "# usage: usdview",
-                "#        [-h] [--renderer {GL,Embree,Prman,HydraDisabled}]",
-                "#        [--select PRIMPATH] [--camera CAMERA] [--mask PRIMPATH[,PRIMPATH...]]",
-                "#        [--clearsettings] [--defaultsettings] [--norender] [--noplugins]",
-                "#        [--unloaded] [--timing] [--memstats {none,stage,stageAndImaging}]",
-                "#        [--numThreads NUMTHREADS] [--ff FIRSTFRAME] [--lf LASTFRAME]",
-                "#        [--cf CURRENTFRAME] [--complexity {low,medium,high,veryhigh}]",
-                "#        [--quitAfterStartup] [--sessionLayer SESSIONLAYER]",
-                "#        usdFile",
-                "",
-                "if platform == \"linux\" or platform == \"linux2\":",
-                "    # linux",
-                "    subprocess.Popen([\"usdview\", '${USD_file}'], stdout=subprocess.PIPE)",
-                "elif platform == \"darwin\":",
-                "    # OS X",
-                "    pass",
-                "elif platform == \"win32\":",
-                "    # Windows...",
-                "    subprocess.Popen('usdview ${USD_file}', stdout=subprocess.PIPE, shell=True)",
-                "",
-                "",
-                ""
+                "    "
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/AddVariantSet_color/AddVariant_red": {
+            "attrs": {
+                "variant_name": {
+                    "comment": "The name a variant that will be added to a choosen variant set",
+                    "type": "raw",
+                    "value": "red"
+                }
+            },
+            "code": [
+                "self.vset.AddVariant('${variant_name}')"
             ]
         }
     }

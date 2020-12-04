@@ -57,6 +57,7 @@
         },
         "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
             "attrs": {
+                "prim": {},
                 "type_usdgeom": {
                     "type": "raw",
                     "value": "Sphere"

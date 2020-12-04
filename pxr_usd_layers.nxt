@@ -1,0 +1,76 @@
+{
+    "version": "1.17",
+    "alias": "pxr_usd_layers",
+    "color": "#01697f",
+    "mute": false,
+    "solo": false,
+    "meta_data": {
+        "positions": {
+            "/AddPayload": [
+                2227.1166570858313,
+                88.81140043593805
+            ],
+            "/AddReference": [
+                2184.418868414707,
+                -13.6632923747597
+            ],
+            "/AddSublayer": [
+                2203.205895430002,
+                245.93926274567463
+            ]
+        }
+    },
+    "nodes": {
+        "/AddPayload": {
+            "attrs": {
+                "payload": {},
+                "position": {
+                    "type": "raw",
+                    "value": "Back"
+                }
+            },
+            "code": [
+                "self.payload = self.prim.GetPayloads().AddPayload(identifier=self.stage.GetRootLayer().identifier,",
+                "                                                  primPath=self.prim.GetPath(),",
+                "                                                  position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/AddReference": {
+            "attrs": {
+                "position": {
+                    "type": "raw",
+                    "value": "Front"
+                },
+                "reference": {}
+            },
+            "code": [
+                "self.reference = self.prim.GetReferences().AddReference(identifier=self.stage.GetRootLayer().identifier,",
+                "                                                        primPath=self.prim.GetPath(),",
+                "                                                        position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/AddSublayer": {
+            "attrs": {
+                "directory": {
+                    "type": "raw",
+                    "value": "${path}${sub_layer_name}.${usd_type}"
+                },
+                "path": {
+                    "type": "raw",
+                    "value": "./"
+                },
+                "sub_layer_name": {
+                    "type": "raw",
+                    "value": "HelloWorld"
+                },
+                "usd_type": {
+                    "type": "raw",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "self.root_layer.subLayerPaths.append('${directory}')"
+            ]
+        }
+    }
+}

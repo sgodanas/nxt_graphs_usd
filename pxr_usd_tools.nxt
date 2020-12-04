@@ -5,6 +5,7 @@
     "mute": false,
     "solo": false,
     "references": [
+        "./pxr_usd_layers.nxt",
         "./pxr_usd_model_api.nxt",
         "./pxr_usd_variants.nxt",
         "./pxr_usd_geom.nxt",
@@ -18,6 +19,18 @@
             "./pxr_usd_variants.nxt": "#2d9c1c"
         },
         "positions": {
+            "/AddPayload": [
+                2105.854937259839,
+                85.39557734224813
+            ],
+            "/AddReference": [
+                2097.3153795256144,
+                -23.91076165582948
+            ],
+            "/AddSublayer": [
+                2104.1470257129945,
+                201.53356252770564
+            ],
             "/AddVariant": [
                 1319.1617546917594,
                 80.84750284117011
@@ -172,6 +185,7 @@
             ]
         },
         "collapse": {
+            "/AddPayload": true,
             "/Cone": true,
             "/CreateNew": true,
             "/Cube": true,

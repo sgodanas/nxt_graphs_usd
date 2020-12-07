@@ -95,6 +95,7 @@ I will be adding to these as I go along.
     - Please see [HelloWorld](https://graphics.pixar.com/usd/docs/Hello-World---Creating-Your-First-USD-Stage.html) from pixar.
 
 ![Alt text](images/helloworld.png?raw=true "HelloWorld")
+![Alt text](images/helloworld02.png?raw=true "HelloWorld02")
 
 You can open up a usdview from inside NXT by running the usdview node.
 Please insure you are running the correct path to your file.

@@ -21,6 +21,10 @@
             "/OpenOrFind_Sublayer": [
                 2446.133375712021,
                 377.65962689826443
+            ],
+            "/StageOpen2": [
+                320,
+                0
             ]
         }
     },
@@ -43,7 +47,7 @@
                     "type": "raw",
                     "value": "${path::}/examples/tests/"
                 },
-                "root_layer": {
+                "payload_layer": {
                     "comment": "Returns self.stage"
                 },
                 "type": {
@@ -53,13 +57,13 @@
             },
             "code": [
                 "if Usd.Stage.IsSupportedFile('${directory}'):",
-                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
-                "    if not self.root_layer:",
+                "    self.payload_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.payload_layer:",
                 "        if Sdf.Layer.GetLoadedLayers():",
                 "            for layer in Sdf.Layer.GetLoadedLayers():",
                 "                temp_stage = Usd.Stage.Open(layer)",
                 "                temp_stage = None",
-                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "        self.payload_layer = Sdf.Layer.CreateNew('${directory}')",
                 "else:",
                 "    print('File is not a supported type: ${directory}')"
             ]
@@ -74,7 +78,7 @@
                 }
             },
             "code": [
-                "self.pay_stage = Usd.Stage.Open(self.root_layer)"
+                "self.pay_stage = Usd.Stage.Open(self.payload_layer)"
             ]
         },
         "/OpenOrFind_Payload/StageOpen_Payload/AddPayload": {
@@ -168,7 +172,7 @@
                     "type": "raw",
                     "value": "${path::}/examples/tests/"
                 },
-                "root_layer": {
+                "reference_layer": {
                     "comment": "Returns self.stage",
                     "type": "NoneType"
                 },
@@ -180,13 +184,13 @@
             },
             "code": [
                 "if Usd.Stage.IsSupportedFile('${directory}'):",
-                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
-                "    if not self.root_layer:",
+                "    self.reference_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.reference_layer:",
                 "        if Sdf.Layer.GetLoadedLayers():",
                 "            for layer in Sdf.Layer.GetLoadedLayers():",
                 "                temp_stage = Usd.Stage.Open(layer)",
                 "                temp_stage = None",
-                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "        self.reference_layer = Sdf.Layer.CreateNew('${directory}')",
                 "else:",
                 "    print('File is not a supported type: ${directory}')"
             ]
@@ -202,7 +206,7 @@
                 }
             },
             "code": [
-                "self.ref_stage = Usd.Stage.Open(self.root_layer)"
+                "self.ref_stage = Usd.Stage.Open(self.reference_layer)"
             ]
         },
         "/OpenOrFind_ref/StageOpen_ref/AddReference": {

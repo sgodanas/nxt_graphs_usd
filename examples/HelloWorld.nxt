@@ -62,8 +62,8 @@
                 -190.0
             ],
             "/UsdView3": [
-                320,
-                0
+                133.00314158615663,
+                -418.87296284700915
             ]
         },
         "collapse": {
@@ -100,7 +100,19 @@
                 "path": {
                     "value": "${path::}/tests/"
                 }
-            }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
         },
         "/OpenOrFind_hello/StageOpen_hello": {
             "instance": "/StageOpen",

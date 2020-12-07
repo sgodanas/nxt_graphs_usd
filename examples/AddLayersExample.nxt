@@ -41,6 +41,10 @@
                 517.9441920064114,
                 -722.0213842330963
             ],
+            "/OpenOrFind3": [
+                2040.8284762675394,
+                -286.94124109763965
+            ],
             "/OpenOrFind_Payload": [
                 2128.6819252261193,
                 92.01810892893583
@@ -78,8 +82,8 @@
                 43.469164609315044
             ],
             "/StageOpen2": [
-                637.1380573384615,
-                -481.2773900794156
+                2054.169648997323,
+                -270.87443277726777
             ],
             "/node": [
                 2096.2199581896048,
@@ -93,6 +97,7 @@
             "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_Sublayer2": false,
             "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_ref2": false,
             "/OpenOrFind2/StageOpen2/DefinePrim2/RootLayerSave2": false,
+            "/OpenOrFind3/StageOpen2": true,
             "/OpenOrFind_Payload/StageOpen2": false,
             "/node": true
         }

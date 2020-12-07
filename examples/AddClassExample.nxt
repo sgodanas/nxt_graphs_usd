@@ -1,0 +1,59 @@
+{
+    "version": "1.17",
+    "alias": "AddClassExample",
+    "color": "#00a5e6",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "E:/Sandbox/nxt_graphs_usd/examples/HelloWorldRedux.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/CreateClass2": [
+                1192.0790030763435,
+                -258.39377868928705
+            ],
+            "/InheriteClass2": [
+                1190.7442986274689,
+                -133.62907553193833
+            ],
+            "/RootPath": [
+                19.01457196008002,
+                800.2717300216638
+            ],
+            "/RootPath2": [
+                1022.2266118192704,
+                -271.6789256124233
+            ]
+        },
+        "collapse": {
+            "/GetDefaultPrim": true,
+            "/OpenOrFind_hello/StageOpen_hello/Sphere_world/RootPath2": false,
+            "/RootPath": true
+        }
+    },
+    "nodes": {
+        "/OpenOrFind_hello": {
+            "attrs": {
+                "name": {
+                    "value": "classExample"
+                }
+            }
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/RootPath2": {
+            "instance": "/RootPath",
+            "child_order": [
+                "CreateClass2"
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/RootPath2/CreateClass2": {
+            "instance": "/CreateClass",
+            "child_order": [
+                "InheriteClass2"
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world/RootPath2/CreateClass2/InheriteClass2": {
+            "instance": "/InheriteClass"
+        }
+    }
+}

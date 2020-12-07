@@ -5,7 +5,7 @@
     "mute": false,
     "solo": false,
     "references": [
-        "./pxr_usd_class.nxt",
+        "E:/Sandbox/nxt_graphs_usd/pxr_usd_class.nxt",
         "./pxr_usd_layers.nxt",
         "./pxr_usd_model_api.nxt",
         "./pxr_usd_variants.nxt",
@@ -139,6 +139,10 @@
             "/RootLayerSave": [
                 16.44428156008675,
                 152.715193683245
+            ],
+            "/RootPath": [
+                22.824395477457884,
+                805.9864652977305
             ],
             "/SetAssetIdentifier": [
                 1680.2723319171741,

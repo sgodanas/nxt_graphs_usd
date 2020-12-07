@@ -34,6 +34,10 @@
                 0,
                 74
             ],
+            "/RootPath": [
+                155.4911941901817,
+                821.6782371884831
+            ],
             "/SetAttribute": [
                 0,
                 406
@@ -60,7 +64,8 @@
                 "SetDefaultPrim",
                 "StageOpen",
                 "GetDefaultPrim",
-                "OpenOrFind"
+                "OpenOrFind",
+                "RootPath"
             ],
             "code": [
                 "from pxr import Usd, Sdf, UsdGeom"
@@ -211,6 +216,14 @@
             },
             "code": [
                 "self.stage.GetRootLayer().Save()"
+            ]
+        },
+        "/RootPath": {
+            "attrs": {
+                "root_path": {}
+            },
+            "code": [
+                "self.root_path = Sdf.Path.absoluteRootPath"
             ]
         },
         "/SetAttribute": {

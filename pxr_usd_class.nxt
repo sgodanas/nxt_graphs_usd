@@ -1,0 +1,44 @@
+{
+    "version": "1.17",
+    "alias": "pxr_usd_class",
+    "color": "#51b848",
+    "mute": false,
+    "solo": false,
+    "meta_data": {
+        "positions": {
+            "/CreateClass": [
+                2577.7424321832054,
+                98.74831344357052
+            ],
+            "/InheriteClass": [
+                2648.840450193574,
+                83.67511787383451
+            ]
+        }
+    },
+    "nodes": {
+        "/CreateClass": {
+            "attrs": {
+                "class_name": {
+                    "type": "raw",
+                    "value": "_class_name"
+                },
+                "class_prim": {},
+                "root_path": {},
+                "stage": {}
+            },
+            "code": [
+                "self.class_prim = self.stage.CreateClassPrim(self.root_path.AppendChild('${class_name}'))"
+            ]
+        },
+        "/InheriteClass": {
+            "attrs": {
+                "class_prim": {},
+                "prim": {}
+            },
+            "code": [
+                "self.prim.GetInherits().AddInherit(self.class_prim.GetPath())"
+            ]
+        }
+    }
+}

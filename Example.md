@@ -111,13 +111,13 @@ See [AddLayersExample](examples/AddLayersExample.nxt) on how to use these nodes.
     - Please see [HelloWorld](https://graphics.pixar.com/usd/docs/Hello-World---Creating-Your-First-USD-Stage.html) from pixar.
 
 ![Alt text](images/helloworld.png?raw=true "HelloWorld")
-![Alt text](images/helloworld02.png?raw=true "HelloWorld02")
-![Alt text](images/helloworld03.png?raw=true "HelloWorld03")
-![Alt text](images/helloworld04.png?raw=true "HelloWorld04")
-![Alt text](images/helloworld05.png?raw=true "HelloWorld05")
-![Alt text](images/helloworld06.png?raw=true "HelloWorld06")
-![Alt text](images/helloworld07.png?raw=true "HelloWorld07")
-![Alt text](images/helloworld08.png?raw=true "HelloWorld08")
+![Alt text](images/helloworld02.PNG?raw=true "HelloWorld02")
+![Alt text](images/helloworld03.PNG?raw=true "HelloWorld03")
+![Alt text](images/helloworld04.PNG?raw=true "HelloWorld04")
+![Alt text](images/helloworld05.PNG?raw=true "HelloWorld05")
+![Alt text](images/helloworld06.PNG?raw=true "HelloWorld06")
+![Alt text](images/helloworld07.PNG?raw=true "HelloWorld07")
+![Alt text](images/helloworld08.PNG?raw=true "HelloWorld08")
 
 You can open up a usdview from inside NXT by running the usdview node.
 Please insure you are running the correct path to your file.

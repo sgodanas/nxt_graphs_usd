@@ -5,7 +5,7 @@
     "mute": false,
     "solo": false,
     "references": [
-        "E:/Sandbox/nxt_graphs_usd/examples/HelloWorldRedux.nxt"
+        "./HelloWorldRedux.nxt"
     ],
     "meta_data": {
         "positions": {

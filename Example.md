@@ -11,9 +11,9 @@ These single nodes when combined(parented or strung together)
 
 ![Alt text](images/CoreUsdNodes.png?raw=true "CoreLayer")
 
-All the core layers can be opened up in NXT by simply opening [pxr_usd_tools](pxr_usd_tools.nxt) or as individual layers.
-At the moment there are 5 layer to draw from: [tools](pxr_usd_tools.nxt), [usd](pxr_usd.nxt), [geom](pxr_usd_geom.nxt), 
-[model_api](pxr_usd_model_api.nxt) and [variants](pxr_usd_variants.nxt). 
+All the core layers can be opened up in NXT by simply opening [pxr_usd_tools](graphs/pxr_usd_tools.nxt) or as individual layers.
+At the moment there are 5 layer to draw from: [tools](graphs/pxr_usd_tools.nxt), [usd](graphs/pxr_usd.nxt), [geom](graphs/pxr_usd_geom.nxt), 
+[model_api](graphs/pxr_usd_model_api.nxt) and [variants](graphs/pxr_usd_variants.nxt). 
 
 I will be adding to these as I go along.
 

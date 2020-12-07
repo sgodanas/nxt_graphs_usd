@@ -77,6 +77,9 @@ I will be adding to these as I go along.
  - SetAssetIdentifier: Sets the model's asset identifier to the given asset path
  - SetPayloadAssetDependencies: Returns the list of asset dependencies referenced inside the payload of the model.
 
+See [ModelApiExample](examples/ModelApiExample.nxt) on how to use these nodes.
+
+
 ### pxr_usd_tools
 
 ##### nodes
@@ -88,6 +91,18 @@ I will be adding to these as I go along.
  - UsdDiff: Open up a terminal and diff usd file from within nxt
  - UsdConvert: Convert abc/usd file to usd file type of your choice.
 
+### pxr_usd_layers
+
+##### nodes
+
+![Alt text](images/addlayergraph.png?raw=true "layeringNodes")
+
+ - Reference stack: Open or create a reference for a given usd file.
+ - Payload stack: Open or create a payload for a given usd file.
+ - sublayer stack: Open or create a sublayer for a given usd file.
+
+See [AddLayersExample](examples/AddLayersExample.nxt) on how to use these nodes.
+
 # Example Layers
  - The following nxt graphs build example usd file based off of Pixar's [Tutorials](https://graphics.pixar.com/usd/docs/USD-Tutorials.html).
  - For and in depth look into how NXT works please see: [NXT_Tutorials](https://nxt-dev.github.io/tutorials/)
@@ -96,6 +111,12 @@ I will be adding to these as I go along.
 
 ![Alt text](images/helloworld.png?raw=true "HelloWorld")
 ![Alt text](images/helloworld02.png?raw=true "HelloWorld02")
+![Alt text](images/helloworld03.png?raw=true "HelloWorld03")
+![Alt text](images/helloworld04.png?raw=true "HelloWorld04")
+![Alt text](images/helloworld05.png?raw=true "HelloWorld05")
+![Alt text](images/helloworld06.png?raw=true "HelloWorld06")
+![Alt text](images/helloworld07.png?raw=true "HelloWorld07")
+![Alt text](images/helloworld08.png?raw=true "HelloWorld08")
 
 You can open up a usdview from inside NXT by running the usdview node.
 Please insure you are running the correct path to your file.
@@ -114,4 +135,4 @@ Then simple execute from selected:
  - [AuthorVariants.nxt](examples/AuthorVariants.nxt)
     - Please see [AuthorVariants](https://graphics.pixar.com/usd/docs/Authoring-Variants.html) from pixar.
 
-![Alt text](images/authorvariants.png?raw=true "HelloWorldRedux")
+![Alt text](images/authoringvariants.png?raw=true "HelloWorldRedux")

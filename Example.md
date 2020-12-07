@@ -78,7 +78,7 @@ I will be adding to these as I go along.
  - SetPayloadAssetDependencies: Returns the list of asset dependencies referenced inside the payload of the model.
 
 See [ModelApiExample](examples/ModelApiExample.nxt) on how to use these nodes.
-
+![Alt text](images/ModelApiexample.png?raw=true "ToolNodes")
 
 ### pxr_usd_tools
 

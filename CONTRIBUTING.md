@@ -1,10 +1,7 @@
 # Links
 
 - [Create ticket and branch](#create-ticket-and-branch)
-- [Setting up the Dev Environment](#setting-up-the-dev-environment)
-- [Creating a new OTL](#creating-a-new-OTL)
 - [Deploying](#Deploying)
-- [Licensing](LICENSE)
 
 ## How to contribute
 
